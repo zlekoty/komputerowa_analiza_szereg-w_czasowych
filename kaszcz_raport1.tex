@@ -32,10 +32,15 @@
 	\maketitle
 	\tableofcontents
 	\clearpage
-\section{Opis danych}
-	Niniejszy raport powstał na potrzeby realizacji laboratorium ze Statystyki Stosowanej, prowadzonych przez dr inż. Aleksandrę Grzesiek, do wykładu dr hab. inż. Krzysztofa Burneckiego. Będziemy analizować dane dotyczące długości ogonów myszołowów rdzawosternych (ang. red-tailed hawk) podane w milimetrach. Dysponujemy próbą o wielkości 577 pobraną \href{ https://vincentarelbundock.github.io/Rdatasets/datasets.html}{\textit{z tej strony}}. Na jej podstawie przedstawimy statystyki podzielone według miar położenia, rozproszenia, asymetrii oraz spłaszczenia. Na koniec pierwszego rozdziału zebrane wielkości przedstawimy w formie tabeli.  W~drugiej części raportu zwizualizjemy dane za pomocą histogramu oraz wykresu pudełkowego. Wyznaczymy ponadto dystrybuantę empiryczną analizowanej próby. Na koniec wyniki badań omówimy w~podsumowaniu. Życzymy Czytelnikowi miłej lektury.
+\section{Wstęp}
+	Niniejszy raport powstał na potrzeby realizacji laboratorium z Komputerowej Analizy Szeregów Czasowych, prowadzonych przez mgr Justynę Witulską, do wykładu prof. Agnieszki Wyłomańskiej.
+	Będziemy analizować dane dotyczące poziomu szczęścia w wybranych krajach na świecie, oraz dane dotyczące wpływu na szczęście poziomu PKB na osobę (w dalszej części raportu, będziemy je określać skrótowo jako szczęście i PKB). Po usunięciu wartości brakujących, dysponujemy próbami o wielkości~791. Dane pochodzą \href{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}{\textit{z tej strony}}. Są to wyniki uzyskane przez Instytut Gallupa, w ankietach badających poziom szczęścia oraz jego możliwe indykatory, zebrane  w latach 2015-2020. W raporcie przeprowadzimy analizę jednowymiarową dla dwóch zmiennych oraz zwizualizujemy je przy pomocy histogramu, dystrybuanty empirycznej oraz boxplotu. Następnie wyestymujemy współczynniki w klasycznym modelu regresji, aby na końcu sprawdzić czy uzyskane residua spełniają oczekiwane założenia.
+	
+	Życzymy Czytelnikowi miłej lektury.
 	
 \section{Analiza jednowymiarowa zmiennej zależnej oraz zmiennej niezależnej}
+
+W przeprowadzanej przez nas analizie, zmienną zależną jest \textbf{szczęście}, natomiast zmienną niezależną jest \textbf{PKB}. Rozkład danych możemy zobaczyć na histogramach [\ref{fig:hist}]. Zauważmy, że rozkład szczęścia wydaje się bardziej symetryczny niż rozkład PKB, który sprawia wrażenie lewoskośnego. Jednakże, niestety na pierwszy rzut oka, nie przypominają nam one żadnego ze znanych rozkładów.
 
 \begin{figure}[H]
 	\begin{center}
@@ -45,6 +50,8 @@
 	\end{center}
 \end{figure}
 
+Dystrybuanty empiryczne [\ref{fig:distr}] pokazują z jakim prawdopodobieństwem natrafimy na kolejno szczęście i PKB mniejsze bądź równe od danej wartości. Gdy spojrzymy na dystrybuantę szczęścia, przypomina ona dystrybuantę rozkładu normalnego, o wariancji większej niż wariancja standardowego rozkładu normalnego. W przypadku dystrybuanty PKB, również przypomina ona rozkład normalny, z przesuniętą średnią. 
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.43]{distr.pdf}
@@ -52,6 +59,8 @@
 		\label{fig:distr}
 	\end{center}
 \end{figure}
+
+Wykres pudełkowy (ang. \textit{boxplot}) [\ref{fig:box}] jest to graficzna reprezentacja mediany oraz kwartyli. Wąsy mają długość półtorej wartości rozstępu międzykwartylowego. Co ciekawe, w naszych danych nie pojawiły się wartości odstające, zatem możemy sądzić, że dane zostały rzetelnie zebrane a ryzyko przeprowadzenia błędnej analizy (nieodzwierciedlającej rzeczywistych trendów) jest mniejsze.
 
 \begin{figure}[H]
 	\begin{center}
@@ -61,15 +70,13 @@
 	\end{center}
 \end{figure}
 
+W tabeli [\ref{table}] podsumowałyśmy najistotniejsze miary położenia, rozproszenia, spłaszczenia i skośności. Rzeczwiście skośność którą odczytałyśmy z histogramu dla PKB jest ujemna (zatem rozkład jest lewoskośny), natomiast skośność dla szczęścia jest niewielka. Przypuszczenia z wykresu dystrybuanty empirycznej również się sprawdziły - wariancja szczęścia jest większa od jeden. 
 
-Na histogramie [\ref{fig:hist}] widzimy rozkład danych z badanej próby. Jest to dobry sposób wizualizacji danych, ponieważ można dzięki niemu łatwo oszacować niektóre statystyki takie jak średnia, skośność itp. Widzimy, że dla naszych danych najczęściej obserwujemy długości ogona zawarte w przedziale 220 do 225 mm.
 
-Wykres pudełkowy (ang. \textit{boxplot}) [\ref{fig:box}] jest to graficzna reprezentacja mediany, kwartyli oraz maksimum i minimum z danych (kropki oznaczają wartości odstające), wąsy mają długość półtorej wartości rozstępu międzykwartylowego.
 
-Dystrybuanta empiryczna [\ref{fig:dystr}] pokazuje z jakim prawdopodobieństwem natrafimy na myszołowa rdzawosternego o długości ogona mniejszej bądź równej od danej wartości. Widzimy, że szansa na to, aby spotkać osobnika z ogonem krótszym niż 200 mm lub dłuższym niż 250 mm jest nikła, natomiast długości między 200 a 250 mm występują najczęściej.
-
-\begin{figure}[H]
-	\begin{longtable}[l]{|ll|l|l|}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|ll|l|l|}
 		\hline
 		\rowcolor[HTML]{C0C0C0} 
 		\multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}Miary}                             & Poziom szczęścia & PKB na osobe \\ \hline
@@ -87,9 +94,9 @@ Dystrybuanta empiryczna [\ref{fig:dystr}] pokazuje z jakim prawdopodobieństwem 
 		\multicolumn{1}{|l|}{rozproszenia} & współczynnik zmienności  & 20.52            & 41.33        \\ \hline
 		\multicolumn{1}{|l|}{spłaszczenia}                   & kurtoza                  & 2.25             & 2.31         \\ \hline
 		\multicolumn{1}{|l|}{skośności}                      & skośność                 & -0.01            & -0.36        \\ \hline
-	\end{longtable}
-	\caption{Zestawienie omówionych statystyk}
-\end{figure}
+	\end{tabular}
+\caption{\label{table}Zestawienie statystyk.}
+\end{table}
 	
 \section{Analiza zależności liniowej pomiędzy zmienną zależną a zmienną niezależną}
 
