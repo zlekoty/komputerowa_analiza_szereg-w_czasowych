@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  17 DEC 2022 00:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  21 DEC 2022 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -726,9 +726,32 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip74
 )
-LaTeX Info: Redefining \( on input line 9.
-\c@zadanie=\count317
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 31
+(c:/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count317
+\lst@gtempboxa=\box110
+\lst@token=\toks38
+\lst@length=\count318
+\lst@currlwidth=\dimen285
+\lst@column=\count319
+\lst@pos=\count320
+\lst@lostspace=\dimen286
+\lst@width=\dimen287
+\lst@newlines=\count321
+\lst@lineno=\count322
+\lst@maxwidth=\dimen288
+
+(c:/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count323
+\lst@skipnumbers=\count324
+\lst@framebox=\box111
+)
+(c:/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+LaTeX Info: Redefining \( on input line 15.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 59
 .
 
 (c:/texlive/2021/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -736,38 +759,38 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./kaszcz_raport1.aux)
 \openout1 = `kaszcz_raport1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 
 (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
-\scratchdimen=\dimen285
-\scratchbox=\box110
-\nofMPsegments=\count319
-\nofMParguments=\count320
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count321
-\MPscratchDim=\dimen286
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks39
+\scratchcounter=\count325
+\scratchdimen=\dimen289
+\scratchbox=\box112
+\nofMPsegments=\count326
+\nofMParguments=\count327
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count328
+\MPscratchDim=\dimen290
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
+\everyMPtoPDFconversion=\toks40
 ) (c:/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -814,12 +837,13 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 (c:/texlive/2021/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 59.
 
 (c:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -830,53 +854,54 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (c:/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count324
+\c@section@level=\count331
 )
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
-LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
+LaTeX Info: Redefining \nameref on input line 59.
 
 (./kaszcz_raport1.out) (./kaszcz_raport1.out)
 \@outlinefile=\write3
 \openout3 = `kaszcz_raport1.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-3.
+\c@lstlisting=\count332
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
+1.
 
 (c:/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-3.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
+1.
 
 (c:/texlive/2021/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-33.
+61.
 
 (c:/texlive/2021/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-33.
+61.
 
 (c:/texlive/2021/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 33.
+(Font)              <12> on input line 61.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 33.
+(Font)              <8> on input line 61.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 33.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
+(Font)              <6> on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
 
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
 
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -896,107 +921,127 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<hist.pdf, id=75, 1084.05pt x 361.35pt>
+<hist.pdf, id=76, 1084.05pt x 361.35pt>
 File: hist.pdf Graphic file (type pdf)
 <use hist.pdf>
-Package pdftex.def Info: hist.pdf  used on input line 42.
+Package pdftex.def Info: hist.pdf  used on input line 77.
 (pdftex.def)             Requested size: 466.13242pt x 155.37747pt.
 
-Overfull \hbox (36.12779pt too wide) in paragraph at lines 42--43
- [] 
- []
-
-<distr.pdf, id=76, 1084.05pt x 361.35pt>
-File: distr.pdf Graphic file (type pdf)
-<use distr.pdf>
-Package pdftex.def Info: distr.pdf  used on input line 50.
-(pdftex.def)             Requested size: 466.13242pt x 155.37747pt.
-
-Overfull \hbox (36.12779pt too wide) in paragraph at lines 50--51
+Overfull \hbox (36.12779pt too wide) in paragraph at lines 77--78
  [] 
  []
 
 [2
 
  <./hist.pdf>]
-<box.pdf, id=124, 1084.05pt x 361.35pt>
-File: box.pdf Graphic file (type pdf)
-<use box.pdf>
-Package pdftex.def Info: box.pdf  used on input line 58.
+<distr.pdf, id=127, 1084.05pt x 361.35pt>
+File: distr.pdf Graphic file (type pdf)
+<use distr.pdf>
+Package pdftex.def Info: distr.pdf  used on input line 87.
 (pdftex.def)             Requested size: 466.13242pt x 155.37747pt.
 
-Overfull \hbox (36.12779pt too wide) in paragraph at lines 58--59
+Overfull \hbox (36.12779pt too wide) in paragraph at lines 87--88
  [] 
  []
 
+<box.pdf, id=129, 1084.05pt x 361.35pt>
+File: box.pdf Graphic file (type pdf)
+<use box.pdf>
+Package pdftex.def Info: box.pdf  used on input line 97.
+(pdftex.def)             Requested size: 466.13242pt x 155.37747pt.
 
-LaTeX Warning: Reference `fig:dystr' on page 3 undefined on input line 69.
-
-
-Underfull \vbox (badness 10000) detected at line 90
+Overfull \hbox (36.12779pt too wide) in paragraph at lines 97--98
+ [] 
  []
 
 [3 <./distr.pdf> <./box.pdf>]
-<plot1.pdf, id=203, 722.7pt x 361.35pt>
+<plot1.pdf, id=206, 722.7pt x 361.35pt>
 File: plot1.pdf Graphic file (type pdf)
 <use plot1.pdf>
-Package pdftex.def Info: plot1.pdf  used on input line 100.
+Package pdftex.def Info: plot1.pdf  used on input line 139.
 (pdftex.def)             Requested size: 310.75494pt x 155.37747pt.
- [4 <./plot1.pdf>]
-<plot2.pdf, id=253, 722.7pt x 361.35pt>
+ [4] [5 <./plot1.pdf>]
+<plot2.pdf, id=267, 722.7pt x 361.35pt>
 File: plot2.pdf Graphic file (type pdf)
 <use plot2.pdf>
-Package pdftex.def Info: plot2.pdf  used on input line 137.
+Package pdftex.def Info: plot2.pdf  used on input line 176.
 (pdftex.def)             Requested size: 310.75494pt x 155.37747pt.
- [5 <./plot2.pdf>]
-Overfull \hbox (21.30304pt too wide) detected at line 160
+
+Overfull \hbox (21.30304pt too wide) detected at line 199
 [] \OML/lmm/m/it/10 ;
  []
 
-<obrazki//res.pdf, id=308, 722.7pt x 361.35pt>
-File: obrazki//res.pdf Graphic file (type pdf)
-<use obrazki//res.pdf>
-Package pdftex.def Info: obrazki//res.pdf  used on input line 182.
-(pdftex.def)             Requested size: 310.75494pt x 155.37747pt.
-<obrazki//res_hist.pdf, id=309, 722.7pt x 361.35pt>
-File: obrazki//res_hist.pdf Graphic file (type pdf)
-<use obrazki//res_hist.pdf>
-Package pdftex.def Info: obrazki//res_hist.pdf  used on input line 190.
-(pdftex.def)             Requested size: 310.75494pt x 155.37747pt.
-[6 <./obrazki//res.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-02.
- (c:/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+[6 <./plot2.pdf>]
+<res.pdf, id=318, 722.7pt x 361.35pt>
+File: res.pdf Graphic file (type pdf)
+<use res.pdf>
+Package pdftex.def Info: res.pdf  used on input line 223.
+(pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
+ (c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 231.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-03.
+31.
 
 (c:/texlive/2021/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [7 <./res.pdf>]
+
+LaTeX Warning: File `acor.pdf' not found on input line 256.
+
+
+! Package pdftex.def Error: File `acor.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 		\includegraphics[scale=0.5]{acor.pdf}
+                                             
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<res_hist.pdf, id=354, 722.7pt x 361.35pt>
+File: res_hist.pdf Graphic file (type pdf)
+<use res_hist.pdf>
+Package pdftex.def Info: res_hist.pdf  used on input line 265.
+(pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
+[8 <./res_hist.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+90.
+ (c:/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (32.74414pt too wide) in paragraph at lines 204--205
+Overfull \hbox (32.74414pt too wide) in paragraph at lines 292--293
 [][]$\T1/lmtt/m/n/10 https : / / www . geo . fu-[]berlin . de / en / v / soga /
  Basics-[]of-[]statistics / Descriptive-[]Statistics /
  []
 
-[7 <./obrazki//res_hist.pdf>] (./kaszcz_raport1.aux)
+[9] (./kaszcz_raport1.aux)
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `kaszcz_raport1.out' has not changed.
-(rerunfilecheck)             Checksum: 99391A70154307C61AE6D79503C978FF;2681.
+
+Package rerunfilecheck Warning: File `kaszcz_raport1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `kaszcz_raport1.out':
+(rerunfilecheck)             Before: 60EB6309425C0C1DF867E5C5A94CFC54;2651
+(rerunfilecheck)             After:  7AB21D7FBCE3ACFD6CF583A0B97397E1;2948.
  ) 
 Here is how much of TeX's memory you used:
- 16146 strings out of 478994
- 272709 string characters out of 5862207
- 680637 words of memory out of 5000000
- 33284 multiletter control sequences out of 15000+600000
- 456123 words of font info for 75 fonts, out of 8000000 for 9000
+ 17987 strings out of 478994
+ 296330 string characters out of 5862207
+ 920231 words of memory out of 5000000
+ 35064 multiletter control sequences out of 15000+600000
+ 462417 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,12n,117p,950b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2021/tex
-mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvi
+ 97i,12n,117p,931b,1963s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2021/te
+xmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvi
 ps/lm/lm-rm.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c
 :/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2021/tex
 mf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/texlive/2021/texmf-dist/fonts/type
@@ -1010,11 +1055,12 @@ fonts/type1/public/lm/lmr17.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/
 lm/lmr5.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texl
 ive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2021/texmf-dis
 t/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/publ
-ic/lm/lmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on kaszcz_raport1.pdf (7 pages, 366720 bytes).
+ic/lm/lmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c
+:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
+Output written on kaszcz_raport1.pdf (9 pages, 402241 bytes).
 PDF statistics:
- 423 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 29 named destinations out of 1000 (max. 500000)
+ 477 PDF objects out of 1000 (max. 8388607)
+ 256 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
  132 words of extra memory for PDF output out of 10000 (max. 10000000)
 
