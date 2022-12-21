@@ -5,6 +5,12 @@
 \usepackage{mathtools,amsthm,amssymb,icomma,upgreek,xfrac,enumerate, bbm,titlesec,lmodern,polski,derivative,geometry,multicol,titling,graphicx,url,amsmath,caption,lipsum,float,longtable,booktabs}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage[hidelinks,breaklinks,pdfusetitle,pdfdisplaydoctitle]{hyperref}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{light-gray}{gray}{0.95}
 \setlength{\droptitle}{-1cm}
 \mathtoolsset{showonlyrefs,mathic}
 \title{Komputerowa analiza szeregów czasowych raport 1}
@@ -16,14 +22,36 @@
 {\bfseries}{}%
 {\newline}{}%
 \theoremstyle{break}
-\newtheorem{zadanie}{Zadanie} 
-\newtheorem*{rozwiazanie}{Rozwiązanie}
 
 \titleformat*{\section}{\LARGE\bfseries}
 \titleformat*{\subsection}{\Large\bfseries}
 \titleformat*{\subsubsection}{\large\bfseries}
 \titleformat*{\paragraph}{\large\bfseries}
 \titleformat*{\subparagraph}{\large\bfseries}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\renewcommand{\lstlistingname}{Kod}% Listing -> Kod
+\renewcommand{\lstlistlistingname}{Lista Kodów}% List of Listings -> Lista kodów
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
 
 \graphicspath{{obrazki/}}
 
@@ -32,10 +60,15 @@
 	\maketitle
 	\tableofcontents
 	\clearpage
-\section{Opis danych}
-	Niniejszy raport powstał na potrzeby realizacji laboratorium ze Statystyki Stosowanej, prowadzonych przez dr inż. Aleksandrę Grzesiek, do wykładu dr hab. inż. Krzysztofa Burneckiego. Będziemy analizować dane dotyczące długości ogonów myszołowów rdzawosternych (ang. red-tailed hawk) podane w milimetrach. Dysponujemy próbą o wielkości 577 pobraną \href{ https://vincentarelbundock.github.io/Rdatasets/datasets.html}{\textit{z tej strony}}. Na jej podstawie przedstawimy statystyki podzielone według miar położenia, rozproszenia, asymetrii oraz spłaszczenia. Na koniec pierwszego rozdziału zebrane wielkości przedstawimy w formie tabeli.  W~drugiej części raportu zwizualizjemy dane za pomocą histogramu oraz wykresu pudełkowego. Wyznaczymy ponadto dystrybuantę empiryczną analizowanej próby. Na koniec wyniki badań omówimy w~podsumowaniu. Życzymy Czytelnikowi miłej lektury.
+\section{Wstęp}
+	Niniejszy raport powstał na potrzeby realizacji laboratorium z Komputerowej Analizy Szeregów Czasowych, prowadzonych przez mgr Justynę Witulską, do wykładu prof. Agnieszki Wyłomańskiej.
+	Będziemy analizować dane dotyczące poziomu szczęścia w wybranych krajach na świecie, oraz dane dotyczące wpływu na szczęście poziomu PKB na osobę (w dalszej części raportu, będziemy je określać skrótowo jako szczęście i PKB). Po usunięciu wartości brakujących, dysponujemy próbami o wielkości~791. Dane pochodzą \href{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}{\textit{z tej strony}}. Są to wyniki uzyskane przez Instytut Gallupa, w ankietach badających poziom szczęścia oraz jego możliwe indykatory, zebrane  w latach 2015-2020. W raporcie przeprowadzimy analizę jednowymiarową dla dwóch zmiennych oraz zwizualizujemy je przy pomocy histogramu, dystrybuanty empirycznej oraz boxplotu. Następnie wyestymujemy współczynniki w klasycznym modelu regresji, aby na końcu sprawdzić czy uzyskane residua spełniają oczekiwane założenia.
+	
+	Życzymy Czytelnikowi miłej lektury.
 	
 \section{Analiza jednowymiarowa zmiennej zależnej oraz zmiennej niezależnej}
+
+W przeprowadzanej przez nas analizie, zmienną zależną jest \textbf{szczęście}, natomiast zmienną niezależną jest \textbf{PKB}. Rozkład danych możemy zobaczyć na histogramach [\ref{fig:hist}]. Zauważmy, że rozkład szczęścia wydaje się bardziej symetryczny niż rozkład PKB, który sprawia wrażenie lewoskośnego. Jednakże, niestety na pierwszy rzut oka, nie przypominają nam one żadnego ze znanych rozkładów.
 
 \begin{figure}[H]
 	\begin{center}
@@ -45,6 +78,8 @@
 	\end{center}
 \end{figure}
 
+Dystrybuanty empiryczne [\ref{fig:distr}] pokazują z jakim prawdopodobieństwem natrafimy na kolejno szczęście i PKB mniejsze bądź równe od danej wartości. Gdy spojrzymy na dystrybuantę szczęścia, przypomina ona dystrybuantę rozkładu normalnego, o wariancji większej niż wariancja standardowego rozkładu normalnego. W przypadku dystrybuanty PKB, również przypomina ona rozkład normalny, z przesuniętą średnią. 
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.43]{distr.pdf}
@@ -52,6 +87,8 @@
 		\label{fig:distr}
 	\end{center}
 \end{figure}
+
+Wykres pudełkowy (ang. \textit{boxplot}) [\ref{fig:box}] jest to graficzna reprezentacja mediany oraz kwartyli. Wąsy mają długość półtorej wartości rozstępu międzykwartylowego. Co ciekawe, w naszych danych nie pojawiły się wartości odstające, zatem możemy sądzić, że dane zostały rzetelnie zebrane a ryzyko przeprowadzenia błędnej analizy (nieodzwierciedlającej rzeczywistych trendów) jest mniejsze.
 
 \begin{figure}[H]
 	\begin{center}
@@ -61,15 +98,13 @@
 	\end{center}
 \end{figure}
 
+W tabeli [\ref{table}] podsumowałyśmy najistotniejsze miary położenia, rozproszenia, spłaszczenia i skośności. Rzeczwiście skośność którą odczytałyśmy z histogramu dla PKB jest ujemna (zatem rozkład jest lewoskośny), natomiast skośność dla szczęścia jest niewielka. Przypuszczenia z wykresu dystrybuanty empirycznej również się sprawdziły - wariancja szczęścia jest większa od jeden. 
 
-Na histogramie [\ref{fig:hist}] widzimy rozkład danych z badanej próby. Jest to dobry sposób wizualizacji danych, ponieważ można dzięki niemu łatwo oszacować niektóre statystyki takie jak średnia, skośność itp. Widzimy, że dla naszych danych najczęściej obserwujemy długości ogona zawarte w przedziale 220 do 225 mm.
 
-Wykres pudełkowy (ang. \textit{boxplot}) [\ref{fig:box}] jest to graficzna reprezentacja mediany, kwartyli oraz maksimum i minimum z danych (kropki oznaczają wartości odstające), wąsy mają długość półtorej wartości rozstępu międzykwartylowego.
 
-Dystrybuanta empiryczna [\ref{fig:dystr}] pokazuje z jakim prawdopodobieństwem natrafimy na myszołowa rdzawosternego o długości ogona mniejszej bądź równej od danej wartości. Widzimy, że szansa na to, aby spotkać osobnika z ogonem krótszym niż 200 mm lub dłuższym niż 250 mm jest nikła, natomiast długości między 200 a 250 mm występują najczęściej.
-
-\begin{figure}[H]
-	\begin{longtable}[l]{|ll|l|l|}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|ll|l|l|}
 		\hline
 		\rowcolor[HTML]{C0C0C0} 
 		\multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}Miary}                             & Poziom szczęścia & PKB na osobe \\ \hline
@@ -87,9 +122,9 @@ Dystrybuanta empiryczna [\ref{fig:dystr}] pokazuje z jakim prawdopodobieństwem 
 		\multicolumn{1}{|l|}{rozproszenia} & współczynnik zmienności  & 20.52            & 41.33        \\ \hline
 		\multicolumn{1}{|l|}{spłaszczenia}                   & kurtoza                  & 2.25             & 2.31         \\ \hline
 		\multicolumn{1}{|l|}{skośności}                      & skośność                 & -0.01            & -0.36        \\ \hline
-	\end{longtable}
-	\caption{Zestawienie omówionych statystyk}
-\end{figure}
+	\end{tabular}
+\caption{\label{table}Zestawienie statystyk.}
+\end{table}
 	
 \section{Analiza zależności liniowej pomiędzy zmienną zależną a zmienną niezależną}
 
@@ -177,21 +212,70 @@ Przyjmując $\alpha = 0.05$ otrzymujemy zatem, że z 95\% prawdopodobieństwem
 
 \section{Analiza residuów}
 
+W tej części, przeprowadzimy analizę residuów. Dzięki temu możemy ocenić czy model regresji liniowej jest dobrym wyborem dla naszego zbioru danych. Pod nazwą residuum mamy na myśli różnicę między wyestymowaną wartością, a wartością rzeczywistą.
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.43]{res.pdf}
-		\caption{Wy}
+		\includegraphics[scale=0.5]{res.pdf}
+		\caption{Residua}
 		\label{fig:res}
 	\end{center}
 \end{figure}
 
+Na wykresie [\ref{fig:res}] przedstawione zostały residua z regresji liniowej szczęścia w zależności od PKB. Czerwona linia oznacza średnią, która jest bliska zeru. Na pierwszy rzut oka, widzimy że wariancja jest mniej więcej równa na całej długości osi zmiennej niezależnej. Aby upewnić się czy nasze przewidywanie jest słuszne, wykonamy test Levene'a jednorodności wariancji [\ref{levene}]. 
+
+\begin{lstlisting}[language=Python, caption=Test Levene'a, label={levene}]
+	stat, p_value = scipy.stats.levene(random.sample(residuals,350),random.sample(residuals,350))
+	if p_value > 0.05:
+		print("Wariancja jest raczej stala.")
+	else:
+		print("Wariancja raczej nie jest stala.")
+		
+	#output
+	Wariancja jest raczej stala.
+\end{lstlisting}
+
+Po wykonaniu testu nie mamy podstaw aby odrzucić hipotezę zerową: "Wszystkie próbki są z populacji o równej wariancji". Teraz będziemy chciały sprawdzić czy residua są niezależne. Ponieważ na wykresie [\ref{fig:res}] trudno dostrzec zależność, wykonamy test Durbina-Watsona [\ref{durbin}].
+
+\begin{lstlisting}[language=Python, caption=Test Levene'a, label={durbin}]
+	from statsmodels.stats.stattools import durbin_watson as dwtest
+	dwtest(resids=np.array(residuals))
+	
+	#output
+	1.2617265161048754
+\end{lstlisting}
+
+Jeżeli wynik jest bliski 2 oznacza to, że residua nie są skorelowane. W naszym przypadku, test sugeruje dodatnią korelację, co możemy również zobrazować na wykresie [\ref{fig:acor}], który wykorzystuje funkcję \code{acf} z pakietu \code{statsmodels.tsa.stattools}, aby policzyć autokorelację.
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.43]{res_hist.pdf}
-		\caption{Wy}
+		\includegraphics[scale=0.5]{acor.pdf}
+		\caption{Autokowariancja residuów}
+		\label{fig:acor}
+	\end{center}
+\end{figure}
+
+Na koniec, sprawdzimy jeszcze, czy rozkład residuów jest normalny. W tym celu porównamy ich histogram z gęstością rozkładu normalnego [\ref{fig:res_hist}]. 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{res_hist.pdf}
+		\caption{Rozkład residuów}
 		\label{fig:res_hist}
 	\end{center}
 \end{figure}
+
+ Ponieważ możemy mieć wątpliwości wynikające z różnic na wykresie, wykonamy test na normalność [\ref{norm}], który potwierdza, że residua prawdopodobnie nie mają oczekiwanego rozkładu.
+
+\begin{lstlisting}[language=Python, caption=Test Levene'a, label={norm}]
+	stat, p = scipy.stats.normaltest(residuals)
+	if p > 0.05:
+		print('Dane raczej pochodza z rozkladu normalnego')
+	else:
+		print('Dane raczej nie pochodza z rozkladu normalnego')
+		
+	#output
+	Dane raczej nie pochodza z rozkladu normalnego
+\end{lstlisting}
 
 	
 \section{Podsumowanie}
