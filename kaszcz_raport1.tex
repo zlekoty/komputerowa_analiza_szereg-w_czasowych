@@ -93,22 +93,88 @@ Dystrybuanta empiryczna [\ref{fig:dystr}] pokazuje z jakim prawdopodobieństwem 
 	
 \section{Analiza zależności liniowej pomiędzy zmienną zależną a zmienną niezależną}
 
+\subsection{Wykres rozproszenia i określenie zależności}
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.43]{plot1.pdf}
-		\caption{p1}
-		\label{fig:plot1}
+		\caption{wykres rozproszenia}
+		\label{fig:rozproszenie}
 	\end{center}
 \end{figure}
+
+Na podstawie wykresu rozproszenia [\ref{fig:rozproszenie}] możemy stwierdzić, że zależność pomiędzy zmiennymi prawdopodobnie jest liniowa.
+
+\subsection{Punktowa estymacja współczynników}
+
+Współczynniki regresji liniowej wyznaczamy ze wzorów
+\begin{equation}
+\left\{ \begin{array}{ll}
+	\beta_{1} = r\frac{S_{y}}{S_{x}}\\
+	\beta_{0} = \bar{y} - r\beta_{1}\bar{x}
+\end{array} \right.,
+\end{equation} gdzie
+\begin{equation}
+	r = \frac{1}{n-1}\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{S_{x}S_{y}},
+\end{equation}
+\begin{equation}
+	S_{x} = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}},
+\end{equation}
+\begin{equation}
+	S_{y} = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}},
+\end{equation}
+\begin{equation}
+	\bar{x} = \frac{1}{n}\sum_{i=1}^{n}x_{i},
+\end{equation}
+\begin{equation}
+	\bar{y} = \frac{1}{n}\sum_{i=1}^{n}y_{i}.
+\end{equation}
+
+Wzory te zostały wyznaczone przy pomocy metody najmniejszych kwadratów.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.43]{plot2.pdf}
-		\caption{p2}
-		\label{fig:plot2}
+		\caption{wykres rozproszenia z zaznaczoną prostą regresji}
+		\label{fig:prosta}
 	\end{center}
 \end{figure}
-	
+
+Z powyższych wzorów otrzymaliśmy 
+\begin{equation}
+	\left\{ \begin{array}{ll}
+		\beta_{1} \approx 2.32\\
+		\beta_{0} \approx 3.32
+	\end{array} \right..
+\end{equation}
+Współczynniki te opisują prostą widoczną na wykresie [\ref{fig:prosta}].
+
+\subsection{Przedziałowa estymacja współczynników}
+
+Z założenia o normalności rozkładu $\{\varepsilon\}_{i=1}^{n}$, przy braku znajomości jego wariancji możemy stwierdzić, że unormowane parametry $\beta_0$, $\beta_1$ mają rozkład t-studenta z n-2 stopniami swobody. Przedziały ufności przyjmują wtedy postać
+\begin{equation}
+\left\{ \begin{array}{ll}
+	P\left(\hat{\beta}_{0}-t_{n-2}(1-\frac{\alpha}{2})S\sqrt{\frac{1}{n}+\frac{\bar{x}^{2}}{\sum_{i=1}^{n}(x_i-\bar{x})^2}} < \beta_{0} < \hat{\beta}_{0}+t_{n-2}(1-\frac{\alpha}{2})S\sqrt{\frac{1}{n}+\frac{\bar{x}^{2}}{\sum_{i=1}^{n}(x_i-\bar{x})^2}}\right) = 1-\alpha\\
+	P\left(\hat{\beta}_{1}-t_{n-2}(1-\frac{\alpha}{2})\frac{S}{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}} < \beta_{1} < \hat{\beta}_{1}+t_{n-2}(1-\frac{\alpha}{2})\frac{S}{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}}\right) = 1-\alpha
+\end{array} \right.,
+\end{equation} gdzie
+\begin{equation}
+	S = \sqrt{\frac{\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}{n-2}}.
+\end{equation}
+Przyjmując $\alpha = 0.05$ otrzymujemy zatem, że z 95\% prawdopodobieństwem
+\begin{equation}
+	\left\{ \begin{array}{ll}
+		\beta_{1} \in (2.19, 2.44)\\
+		\beta_{0} \in (3.20, 3.44)
+	\end{array} \right..
+\end{equation}
+
+\subsection{Ocena poziomu zależności}
+
+\subsection{Predykcja oraz jej przedziały ufności}
+
+\subsection{Interpretacja wyników}
+
 \section{Analiza residuów}
 
 \begin{figure}[H]
