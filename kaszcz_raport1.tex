@@ -281,6 +281,8 @@ W klasycznym modelu regresji zakładamy, że residua mają średnią równą 0, 
 
 Na wykresie [\ref{fig:res}] przedstawione zostały residua z regresji liniowej szczęścia w zależności od PKB. Czerwona linia oznacza średnią, która jest bliska zeru. Na pierwszy rzut oka widzimy, że wariancja jest raczej równa na całej długości osi zmiennej niezależnej. Aby upewnić się, czy nasze przewidywanie jest słuszne, wykonamy test Levene'a jednorodności wariancji [\ref{levene}]. 
 
+Test ten sprawdza hipotezę zerową "wszystkie próbki pochodzą z populacji o tej samej wariancji." przeciwko hipotezie alternatywnej "Przynajmniej dwie próbki pochodzą z populacji o różnych wariancjach.". W tym celu dzieli próbkę na mniejsze podgrupy i porównuje ze sobą ich mediany. Test ten, w przeciwieństwie do testu Bartletta można stosować dla danych niepochodzących z rozkładu normalnegp.
+
 \begin{lstlisting}[language=Python, caption=Test Levene'a, label={levene}]
 	stat, p_value = scipy.stats.levene(random.sample(residuals,350),random.sample(residuals,350))
 	if p_value > 0.05:
@@ -292,29 +294,21 @@ Na wykresie [\ref{fig:res}] przedstawione zostały residua z regresji liniowej s
 	Wariancja jest raczej stala.
 \end{lstlisting}
 
-Po wykonaniu testu nie mamy podstaw, aby odrzucić hipotezę zerową: "Wszystkie próbki są z populacji o równej wariancji". 
+Po wykonaniu testu nie mamy podstaw, aby odrzucić hipotezę zerową.
 
 \subsection{Niezależność}
 
-Następnie będziemy chciały sprawdzić, czy residua są niezależne. Ponieważ na wykresie [\ref{fig:res}] trudno dostrzec zależność, wykonamy test Durbina-Watsona [\ref{durbin}].
-
-\begin{lstlisting}[language=Python, caption=Test Durbina-Watsona, label={durbin}]
-	from statsmodels.stats.stattools import durbin_watson as dwtest
-	dwtest(resids=np.array(residuals))
-	
-	#output
-	1.2617265161048754
-\end{lstlisting}
-
-Jeżeli wynik jest bliski 2, oznacza to, że residua nie są skorelowane, jeżeli natomiast jest mniejszy od 1 lub większy od 3, korelacja z dużym prawdopodobieństwem występuje. W naszym przypadku test nie stwierdza jednoznacznie korelacji, sugeruje dodatnią korelację, co możemy również zobrazować na wykresie [\ref{fig:acor}], który wykorzystuje funkcję \code{acf} z pakietu \code{statsmodels.tsa.stattools}, aby policzyć autokorelację.
+Następnie będziemy chciały sprawdzić, czy residua są niezależne. W tym celu wykonamy wykres [\ref{fig:acor}], który wykorzystuje funkcję \code{acf} z pakietu \code{statsmodels.tsa.stattools}, aby policzyć autokorelację.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{acor.pdf}
-		\caption{Autokowariancja residuów}
+		\caption{Autokorelacja residuów}
 		\label{fig:acor}
 	\end{center}
 \end{figure}
+
+Jak widać na wykresie [\ref{fig:acor}], wartości funkcji autokorelacji dla $h \neq 0$ są małe, możemy zatem uznać, że residua są niezależne.
 
 \subsection{Normalność rozkładu}
 
@@ -327,9 +321,10 @@ Na koniec, sprawdzimy jeszcze, czy rozkład residuów jest normalny. W tym celu 
 	\end{center}
 \end{figure}
 
- Ponieważ możemy mieć wątpliwości wynikające z różnic na wykresie, wykonamy test na normalność [\ref{norm}], który potwierdza, że residua prawdopodobnie nie mają oczekiwanego rozkładu.
+ Ponieważ możemy mieć wątpliwości wynikające z różnic na wykresie, wykonamy test D'Agostino-Pearsona sprawdzający normalność rozkładu. Polega on na porównaniu skośności i kurtozy danych z tymi samynmi statystykami dla rozkładu normalnego. Wynik wykonanego przez nas testu [\ref{norm}] wskazuje, że residua prawdopodobnie nie mają oczekiwanego rozkładu.
 
-\begin{lstlisting}[language=Python, caption=Test Levene'a, label={norm}]
+
+\begin{lstlisting}[language=Python, caption=Test D'Agostino-Pearsona, label={norm}]
 	stat, p = scipy.stats.normaltest(residuals)
 	if p > 0.05:
 		print('Dane raczej pochodza z rozkladu normalnego')
@@ -349,6 +344,9 @@ Na podstawie przeprowadzonej analizy możemy stwierdzić, że między poziomem s
 	\begin{itemize}
 		\item Wykłady
 		\item \url{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}
+		\item \url{https://www.itl.nist.gov/div898/handbook/eda/section3/eda35a.html}
+		\item \url{http://tofesi.mimuw.edu.pl/~cogito/smarterpoland/samouczki/testyNormalnosci/testyNormalnosci.pdf} str.11
+		
 	\end{itemize}
 	
 	
