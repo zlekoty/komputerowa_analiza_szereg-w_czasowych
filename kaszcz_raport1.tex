@@ -265,7 +265,7 @@ Rezulaty powyższej procedury można zobaczyć na wykresie [\ref{fig:predykcja}]
 W tej części przeprowadzimy analizę residuów. Dzięki temu możemy ocenić czy model regresji liniowej jest dobrym wyborem dla naszego zbioru danych. Pod nazwą residuum mamy na myśli różnicę między wartością wyestymowaną a rzeczywistą.
 
 \begin{equation}
-	e_i = y_i - \hat(y)_i
+	e_i = y_i - \hat{y}_i
 \end{equation}
 
 W klasycznym modelu regresji zakładamy, że residua mają średnią równą 0, stałą wariancję, są niezależne od siebie nawzajem i mają rozkład normalny.
@@ -281,7 +281,7 @@ W klasycznym modelu regresji zakładamy, że residua mają średnią równą 0, 
 
 Na wykresie [\ref{fig:res}] przedstawione zostały residua z regresji liniowej szczęścia w zależności od PKB. Czerwona linia oznacza średnią, która jest bliska zeru. Na pierwszy rzut oka widzimy, że wariancja jest raczej równa na całej długości osi zmiennej niezależnej. Aby upewnić się, czy nasze przewidywanie jest słuszne, wykonamy test Levene'a jednorodności wariancji [\ref{levene}]. 
 
-Test ten sprawdza hipotezę zerową "wszystkie próbki pochodzą z populacji o tej samej wariancji." przeciwko hipotezie alternatywnej "Przynajmniej dwie próbki pochodzą z populacji o różnych wariancjach.". W tym celu dzieli próbkę na mniejsze podgrupy i porównuje ze sobą ich mediany. Test ten, w przeciwieństwie do testu Bartletta można stosować dla danych niepochodzących z rozkładu normalnegp.
+Test ten sprawdza hipotezę zerową "wszystkie próbki pochodzą z populacji o tej samej wariancji." przeciwko hipotezie alternatywnej "Przynajmniej dwie próbki pochodzą z populacji o różnych wariancjach.". W tym celu dzieli próbkę na mniejsze podgrupy i porównuje ze sobą ich mediany. Test ten, w przeciwieństwie do testu Bartletta można stosować dla danych niepochodzących z rozkładu normalnego.
 
 \begin{lstlisting}[language=Python, caption=Test Levene'a, label={levene}]
 	stat, p_value = scipy.stats.levene(random.sample(residuals,350),random.sample(residuals,350))
@@ -321,7 +321,7 @@ Na koniec, sprawdzimy jeszcze, czy rozkład residuów jest normalny. W tym celu 
 	\end{center}
 \end{figure}
 
- Ponieważ możemy mieć wątpliwości wynikające z różnic na wykresie, wykonamy test D'Agostino-Pearsona sprawdzający normalność rozkładu. Polega on na porównaniu skośności i kurtozy danych z tymi samynmi statystykami dla rozkładu normalnego. Wynik wykonanego przez nas testu [\ref{norm}] wskazuje, że residua prawdopodobnie nie mają oczekiwanego rozkładu.
+ Ponieważ możemy mieć wątpliwości wynikające z różnic na wykresie, wykonamy test D'Agostino-Pearsona sprawdzający normalność rozkładu. Polega on na porównaniu skośności i kurtozy danych z tymi samymi statystykami dla rozkładu normalnego. Wynik wykonanego przez nas testu [\ref{norm}] wskazuje, że residua prawdopodobnie nie mają oczekiwanego rozkładu.
 
 
 \begin{lstlisting}[language=Python, caption=Test D'Agostino-Pearsona, label={norm}]

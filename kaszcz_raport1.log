@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  22 DEC 2022 22:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  22 DEC 2022 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,7 +1050,7 @@ Package rerunfilecheck Info: File `kaszcz_raport1.out' has not changed.
 Here is how much of TeX's memory you used:
  17969 strings out of 478994
  296684 string characters out of 5862207
- 921855 words of memory out of 5000000
+ 921856 words of memory out of 5000000
  35057 multiletter control sequences out of 15000+600000
  462417 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1073,7 +1073,7 @@ t/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/publ
 ic/lm/lmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c
 :/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt8.pfb><c:/texlive/2021/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on kaszcz_raport1.pdf (12 pages, 474334 bytes).
+Output written on kaszcz_raport1.pdf (12 pages, 474320 bytes).
 PDF statistics:
  667 PDF objects out of 1000 (max. 8388607)
  303 compressed objects within 4 object streams
