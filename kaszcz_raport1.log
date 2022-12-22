@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  22 DEC 2022 17:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  22 DEC 2022 20:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -982,7 +982,7 @@ Overfull \hbox (85.17058pt too wide) detected at line 251
  []
 
 [7]
-<obrazki//pred.pdf, id=352, 722.7pt x 361.35pt>
+<obrazki//pred.pdf, id=354, 722.7pt x 361.35pt>
 File: obrazki//pred.pdf Graphic file (type pdf)
 <use obrazki//pred.pdf>
 Package pdftex.def Info: obrazki//pred.pdf  used on input line 256.
@@ -992,7 +992,7 @@ Overfull \hbox (3.61871pt too wide) in paragraph at lines 256--257
  [] 
  []
 
-<obrazki//res.pdf, id=353, 722.7pt x 361.35pt>
+<obrazki//res.pdf, id=355, 722.7pt x 361.35pt>
 File: obrazki//res.pdf Graphic file (type pdf)
 <use obrazki//res.pdf>
 Package pdftex.def Info: obrazki//res.pdf  used on input line 276.
@@ -1009,12 +1009,12 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
 (c:/texlive/2021/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [9 <./obrazki//res.pdf>]
-<obrazki//acor.pdf, id=475, 722.7pt x 361.35pt>
+<obrazki//acor.pdf, id=477, 722.7pt x 361.35pt>
 File: obrazki//acor.pdf Graphic file (type pdf)
 <use obrazki//acor.pdf>
 Package pdftex.def Info: obrazki//acor.pdf  used on input line 313.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
-<obrazki//res_hist.pdf, id=477, 722.7pt x 361.35pt>
+<obrazki//res_hist.pdf, id=479, 722.7pt x 361.35pt>
 File: obrazki//res_hist.pdf Graphic file (type pdf)
 <use obrazki//res_hist.pdf>
 Package pdftex.def Info: obrazki//res_hist.pdf  used on input line 324.
@@ -1022,23 +1022,22 @@ Package pdftex.def Info: obrazki//res_hist.pdf  used on input line 324.
 
 [10 <./obrazki//acor.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-49.
+50.
  (c:/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-[11 <./obrazki//res_hist.pdf>]
-Overfull \hbox (32.74414pt too wide) in paragraph at lines 351--352
-[][]$\T1/lmtt/m/n/10 https : / / www . geo . fu-[]berlin . de / en / v / soga /
- Basics-[]of-[]statistics / Descriptive-[]Statistics /
+Overfull \hbox (12.2442pt too wide) in paragraph at lines 351--352
+[][]$\T1/lmtt/m/n/10 https : / / www . kaggle . com / datasets / eliasturk / wo
+rld-[]happiness-[]based-[]on-[]cpi-[]20152020$[] 
  []
 
-[12] (./kaszcz_raport1.aux)
+[11 <./obrazki//res_hist.pdf>] (./kaszcz_raport1.aux)
 Package rerunfilecheck Info: File `kaszcz_raport1.out' has not changed.
 (rerunfilecheck)             Checksum: AD9638F7DB31FC2926708451BD0059CB;3319.
  ) 
 Here is how much of TeX's memory you used:
- 17984 strings out of 478994
- 296863 string characters out of 5862207
+ 17983 strings out of 478994
+ 296856 string characters out of 5862207
  937499 words of memory out of 5000000
  35066 multiletter control sequences out of 15000+600000
  462417 words of font info for 78 fonts, out of 8000000 for 9000
@@ -1062,10 +1061,10 @@ t/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/publ
 ic/lm/lmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c
 :/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt8.pfb><c:/texlive/2021/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on kaszcz_raport1.pdf (12 pages, 474966 bytes).
+Output written on kaszcz_raport1.pdf (11 pages, 473598 bytes).
 PDF statistics:
- 673 PDF objects out of 1000 (max. 8388607)
- 312 compressed objects within 4 object streams
- 64 named destinations out of 1000 (max. 500000)
+ 668 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 63 named destinations out of 1000 (max. 500000)
  182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

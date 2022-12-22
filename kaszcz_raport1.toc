@@ -14,4 +14,4 @@
 \contentsline {subsection}{\numberline {4.3}Niezależność}{9}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Normalność rozkładu}{10}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Podsumowanie}{11}{section.5}%
-\contentsline {section}{\numberline {6}Źródła}{12}{section.6}%
+\contentsline {section}{\numberline {6}Źródła}{11}{section.6}%

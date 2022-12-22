@@ -102,7 +102,7 @@ Wykres pudełkowy (ang. \textit{boxplot}) [\ref{fig:box}] jest to graficzna repr
 
 \subsection{Podstawowe miary}
 
-W tabeli [\ref{table}] podsumowałyśmy najistotniejsze miary położenia, rozproszenia, spłaszczenia i skośności. Rzeczywiście skośność, którą odczytałyśmy z histogramu PKB, jest ujemna (zatem rozkład jest lewoskośny), natomiast skośność szczęścia jest niewielka. Przypuszczenia z wykresu dystrybuanty empirycznej również się sprawdziły --- kurtoza szczęscia jest mniejsza od 3 więc rozkład ten jest platokurtyczny. 
+W tabeli [\ref{table}] podsumowałyśmy najistotniejsze miary położenia, rozproszenia, spłaszczenia i skośności. Rzeczywiście skośność, którą odczytałyśmy z histogramu PKB, jest ujemna (zatem rozkład jest lewoskośny), natomiast skośność szczęścia jest niewielka. Przypuszczenia z wykresu dystrybuanty empirycznej również się sprawdziły --- kurtoza szczęścia jest mniejsza od 3 więc rozkład ten jest platokurtyczny. 
 
 
 \begin{table}[H]
@@ -137,7 +137,7 @@ W tabeli [\ref{table}] podsumowałyśmy najistotniejsze miary położenia, rozpr
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.43]{plot1.pdf}
-		\caption{wykres rozproszenia}
+		\caption{Wykres rozproszenia}
 		\label{fig:rozproszenie}
 	\end{center}
 \end{figure}
@@ -175,7 +175,7 @@ Wzory te zostały wyznaczone przy pomocy metody najmniejszych kwadratów.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.43]{plot2.pdf}
-		\caption{wykres rozproszenia z zaznaczoną prostą regresji}
+		\caption{Wykres rozproszenia z zaznaczoną prostą regresji}
 		\label{fig:prosta}
 	\end{center}
 \end{figure}
@@ -306,7 +306,7 @@ Następnie będziemy chciały sprawdzić, czy residua są niezależne. Ponieważ
 	1.2617265161048754
 \end{lstlisting}
 
-Jeżeli wynik jest bliski 2, oznacza to, że residua nie są skorelowane. W naszym przypadku test sugeruje dodatnią korelację, co możemy również zobrazować na wykresie [\ref{fig:acor}], który wykorzystuje funkcję \code{acf} z pakietu \code{statsmodels.tsa.stattools}, aby policzyć autokorelację.
+Jeżeli wynik jest bliski 2, oznacza to, że residua nie są skorelowane, jeżeli natomiast jest mniejszy od 1 lub większy od 3, korelacja z dużym prawdopodobieństwem występuje. W naszym przypadku test nie stwierdza jednoznacznie korelacji, sugeruje dodatnią korelację, co możemy również zobrazować na wykresie [\ref{fig:acor}], który wykorzystuje funkcję \code{acf} z pakietu \code{statsmodels.tsa.stattools}, aby policzyć autokorelację.
 
 \begin{figure}[H]
 	\begin{center}
@@ -342,14 +342,13 @@ Na koniec, sprawdzimy jeszcze, czy rozkład residuów jest normalny. W tym celu 
 
 	
 \section{Podsumowanie}
-	Analizując przedstawione w raporcie statystyki możemy sformułować następujące wnioski i przypuszczenia dotyczące długości ogonów w populacji myszołowów rdzawosternych. Z histogramu widzimy, że badany rozkład przypomina rozkład normalny, jednak po obliczeniu skośności okazuje się, że różni się ona od skośności rozkładu normalnego, która wynosi zero. Podejrzewamy, iż może to być spowodowane licznością próby. Statystyczny myszołów rdzawosterny powinien mieć ogon o długości od $207,638$ do $236.66$ mm, (średnia arytmetyczna $\pm$ odchylenie standardowe). Biorąc średnią z populacji przewidujemy długość około $222,15$ mm. Wartości skrajne nie wpływają znacząco na wartość średniej - wiemy to po obliczeniu średniej Winsorowskiej ($222,182$ mm) i ucinanej ($222,104$ mm). 
+
+Na podstawie przeprowadzonej analizy możemy stwierdzić, że między poziomem szczęścia a PKB per capita dla danego kraju występuje dosyć silna zależność liniowa. Niestety badanie residuów wykazało, że nie mają one rozkładu normalnego. Oznacza to, że co prawda punktowe estymacje zostały przez nas wykonane poprawnie, jednak wszystkie estymacje przedziałowe oparte były o założenie o normalności rozkładu residuów, zatem nie mają zastosowania w tym modelu. Niestety nie znając rozkładu $\epsilon$, nie możemy wyznaczyć faktycznych przedziałów ufności.
 	
 	\section{Źródła}
 	\begin{itemize}
 		\item Wykłady
-		\item \url{https://vincentarelbundock.github.io/Rdatasets/csv/Stat2Data/HawkTail.csv}
-		\item \url{https://www.geo.fu-berlin.de/en/v/soga/Basics-of-statistics/Descriptive-Statistics/Measures-of-Position/index.html}
-		\item \url{https://www.investopedia.com/terms/w/winsorized_mean.asp}
+		\item \url{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}
 	\end{itemize}
 	
 	
