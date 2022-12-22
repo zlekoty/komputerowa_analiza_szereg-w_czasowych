@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  21 DEC 2022 19:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  22 DEC 2022 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,11 +908,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./kaszcz_raport1.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 4.
+(Font)              <10> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 4.
+(Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 4.
+(Font)              <5> on input line 3.
 )
 \tf@toc=\write4
 \openout4 = `kaszcz_raport1.toc'.
@@ -921,125 +921,129 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<hist.pdf, id=76, 1084.05pt x 361.35pt>
-File: hist.pdf Graphic file (type pdf)
-<use hist.pdf>
-Package pdftex.def Info: hist.pdf  used on input line 77.
+<obrazki//hist.pdf, id=101, 1084.05pt x 361.35pt>
+File: obrazki//hist.pdf Graphic file (type pdf)
+<use obrazki//hist.pdf>
+Package pdftex.def Info: obrazki//hist.pdf  used on input line 77.
 (pdftex.def)             Requested size: 466.13242pt x 155.37747pt.
 
 Overfull \hbox (36.12779pt too wide) in paragraph at lines 77--78
  [] 
  []
 
-[2
-
- <./hist.pdf>]
-<distr.pdf, id=127, 1084.05pt x 361.35pt>
-File: distr.pdf Graphic file (type pdf)
-<use distr.pdf>
-Package pdftex.def Info: distr.pdf  used on input line 87.
+<obrazki//distr.pdf, id=103, 1084.05pt x 361.35pt>
+File: obrazki//distr.pdf Graphic file (type pdf)
+<use obrazki//distr.pdf>
+Package pdftex.def Info: obrazki//distr.pdf  used on input line 87.
 (pdftex.def)             Requested size: 466.13242pt x 155.37747pt.
 
 Overfull \hbox (36.12779pt too wide) in paragraph at lines 87--88
  [] 
  []
 
-<box.pdf, id=129, 1084.05pt x 361.35pt>
-File: box.pdf Graphic file (type pdf)
-<use box.pdf>
-Package pdftex.def Info: box.pdf  used on input line 97.
+[2
+
+ <./obrazki//hist.pdf>]
+<obrazki//box.pdf, id=154, 1084.05pt x 361.35pt>
+File: obrazki//box.pdf Graphic file (type pdf)
+<use obrazki//box.pdf>
+Package pdftex.def Info: obrazki//box.pdf  used on input line 97.
 (pdftex.def)             Requested size: 466.13242pt x 155.37747pt.
 
 Overfull \hbox (36.12779pt too wide) in paragraph at lines 97--98
  [] 
  []
 
-[3 <./distr.pdf> <./box.pdf>]
-<plot1.pdf, id=206, 722.7pt x 361.35pt>
-File: plot1.pdf Graphic file (type pdf)
-<use plot1.pdf>
-Package pdftex.def Info: plot1.pdf  used on input line 139.
+[3 <./obrazki//distr.pdf> <./obrazki//box.pdf
+
+pdfTeX warning: pdflatex.exe (file ./obrazki//box.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+>]
+<obrazki//plot1.pdf, id=232, 722.7pt x 361.35pt>
+File: obrazki//plot1.pdf Graphic file (type pdf)
+<use obrazki//plot1.pdf>
+Package pdftex.def Info: obrazki//plot1.pdf  used on input line 139.
 (pdftex.def)             Requested size: 310.75494pt x 155.37747pt.
- [4] [5 <./plot1.pdf>]
-<plot2.pdf, id=267, 722.7pt x 361.35pt>
-File: plot2.pdf Graphic file (type pdf)
-<use plot2.pdf>
-Package pdftex.def Info: plot2.pdf  used on input line 176.
+ [4] [5 <./obrazki//plot1.pdf>]
+<obrazki//plot2.pdf, id=294, 722.7pt x 361.35pt>
+File: obrazki//plot2.pdf Graphic file (type pdf)
+<use obrazki//plot2.pdf>
+Package pdftex.def Info: obrazki//plot2.pdf  used on input line 177.
 (pdftex.def)             Requested size: 310.75494pt x 155.37747pt.
 
-Overfull \hbox (21.30304pt too wide) detected at line 199
+Overfull \hbox (21.30304pt too wide) detected at line 200
 [] \OML/lmm/m/it/10 ;
  []
 
-[6 <./plot2.pdf>]
-<res.pdf, id=318, 722.7pt x 361.35pt>
-File: res.pdf Graphic file (type pdf)
-<use res.pdf>
-Package pdftex.def Info: res.pdf  used on input line 223.
+[6 <./obrazki//plot2.pdf>]
+Overfull \hbox (85.17058pt too wide) detected at line 251
+\OML/lmm/m/it/10 P [] \OT1/lmr/m/n/10 = 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10
+ :
+ []
+
+[7]
+<obrazki//pred.pdf, id=352, 722.7pt x 361.35pt>
+File: obrazki//pred.pdf Graphic file (type pdf)
+<use obrazki//pred.pdf>
+Package pdftex.def Info: obrazki//pred.pdf  used on input line 256.
+(pdftex.def)             Requested size: 433.62334pt x 216.81168pt.
+
+Overfull \hbox (3.61871pt too wide) in paragraph at lines 256--257
+ [] 
+ []
+
+<obrazki//res.pdf, id=353, 722.7pt x 361.35pt>
+File: obrazki//res.pdf Graphic file (type pdf)
+<use obrazki//res.pdf>
+Package pdftex.def Info: obrazki//res.pdf  used on input line 276.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
- (c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+[8 <./obrazki//pred.pdf>]
+(c:/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 231.
+nput line 284.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-31.
+84.
 
 (c:/texlive/2021/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [7 <./res.pdf>]
-
-LaTeX Warning: File `acor.pdf' not found on input line 256.
-
-
-! Package pdftex.def Error: File `acor.pdf' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.256 		\includegraphics[scale=0.5]{acor.pdf}
-                                             
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<res_hist.pdf, id=354, 722.7pt x 361.35pt>
-File: res_hist.pdf Graphic file (type pdf)
-<use res_hist.pdf>
-Package pdftex.def Info: res_hist.pdf  used on input line 265.
+) [9 <./obrazki//res.pdf>]
+<obrazki//acor.pdf, id=475, 722.7pt x 361.35pt>
+File: obrazki//acor.pdf Graphic file (type pdf)
+<use obrazki//acor.pdf>
+Package pdftex.def Info: obrazki//acor.pdf  used on input line 313.
 (pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
-[8 <./res_hist.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-90.
+<obrazki//res_hist.pdf, id=477, 722.7pt x 361.35pt>
+File: obrazki//res_hist.pdf Graphic file (type pdf)
+<use obrazki//res_hist.pdf>
+Package pdftex.def Info: obrazki//res_hist.pdf  used on input line 324.
+(pdftex.def)             Requested size: 361.3491pt x 180.67456pt.
+
+[10 <./obrazki//acor.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+49.
  (c:/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (32.74414pt too wide) in paragraph at lines 292--293
+[11 <./obrazki//res_hist.pdf>]
+Overfull \hbox (32.74414pt too wide) in paragraph at lines 351--352
 [][]$\T1/lmtt/m/n/10 https : / / www . geo . fu-[]berlin . de / en / v / soga /
  Basics-[]of-[]statistics / Descriptive-[]Statistics /
  []
 
-[9] (./kaszcz_raport1.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `kaszcz_raport1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `kaszcz_raport1.out':
-(rerunfilecheck)             Before: 60EB6309425C0C1DF867E5C5A94CFC54;2651
-(rerunfilecheck)             After:  7AB21D7FBCE3ACFD6CF583A0B97397E1;2948.
+[12] (./kaszcz_raport1.aux)
+Package rerunfilecheck Info: File `kaszcz_raport1.out' has not changed.
+(rerunfilecheck)             Checksum: AD9638F7DB31FC2926708451BD0059CB;3319.
  ) 
 Here is how much of TeX's memory you used:
- 17987 strings out of 478994
- 296330 string characters out of 5862207
- 920231 words of memory out of 5000000
- 35064 multiletter control sequences out of 15000+600000
+ 17984 strings out of 478994
+ 296863 string characters out of 5862207
+ 937499 words of memory out of 5000000
+ 35066 multiletter control sequences out of 15000+600000
  462417 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,12n,117p,931b,1963s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 97i,12n,117p,932b,1378s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2021/te
 xmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvi
 ps/lm/lm-rm.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c
@@ -1056,11 +1060,12 @@ lm/lmr5.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texl
 ive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2021/texmf-dis
 t/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/publ
 ic/lm/lmsy7.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c
-:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on kaszcz_raport1.pdf (9 pages, 402241 bytes).
+:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmtt8.pfb><c:/texlive/2021/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on kaszcz_raport1.pdf (12 pages, 474966 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 256 compressed objects within 3 object streams
- 57 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 673 PDF objects out of 1000 (max. 8388607)
+ 312 compressed objects within 4 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

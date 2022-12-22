@@ -8,7 +8,10 @@
 \contentsline {subsection}{\numberline {3.3}Przedziałowa estymacja współczynników}{6}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Ocena poziomu zależności}{7}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Predykcja oraz jej przedziały ufności}{7}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Interpretacja wyników}{7}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Analiza residuów}{7}{section.4}%
-\contentsline {section}{\numberline {5}Podsumowanie}{9}{section.5}%
-\contentsline {section}{\numberline {6}Źródła}{9}{section.6}%
+\contentsline {section}{\numberline {4}Analiza residuów}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Wstęp}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Średnia i wariancja}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Niezależność}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Normalność rozkładu}{10}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Podsumowanie}{11}{section.5}%
+\contentsline {section}{\numberline {6}Źródła}{12}{section.6}%

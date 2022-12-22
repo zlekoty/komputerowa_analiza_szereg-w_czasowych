@@ -62,7 +62,7 @@
 	\clearpage
 \section{Wstęp}
 	Niniejszy raport powstał na potrzeby realizacji laboratorium z Komputerowej Analizy Szeregów Czasowych, prowadzonych przez mgr Justynę Witulską, do wykładu prof. Agnieszki Wyłomańskiej.
-	Będziemy analizować dane dotyczące poziomu szczęścia w wybranych krajach na świecie, oraz jego związku z wartością PKB na osobę (w dalszej części raportu, będziemy je określać skrótowo jako szczęście i PKB). Po usunięciu wartości brakujących, dysponujemy próbami o wielkości~791. Dane pochodzą \href{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}{\textit{z tej strony}}. Są to wyniki uzyskane przez Instytut Gallupa, w ankietach badających poziom szczęścia oraz jego możliwe indykatory, zebrane  w latach 2015-2020. W raporcie przeprowadzimy analizę jednowymiarową dla dwóch zmiennych oraz zwizualizujemy je przy pomocy histogramu, dystrybuanty empirycznej oraz boxplotu. Następnie wyestymujemy współczynniki w klasycznym modelu regresji, aby na końcu sprawdzić czy uzyskane residua spełniają oczekiwane założenia.
+	Będziemy analizować dane dotyczące poziomu szczęścia w wybranych krajach na świecie oraz jego związku z wartością PKB na osobę (w dalszej części raportu, będziemy je określać skrótowo jako szczęście i PKB). Po usunięciu wartości brakujących dysponujemy próbami o wielkości~791. Dane pochodzą \href{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}{\textit{z tej strony}}. Są to wyniki uzyskane przez Instytut Gallupa, w ankietach badających poziom szczęścia oraz jego możliwe indykatory, zebrane  w latach 2015-2020. W raporcie przeprowadzimy analizę jednowymiarową dla dwóch zmiennych oraz zwizualizujemy je przy pomocy histogramu, dystrybuanty empirycznej oraz boxplotu. Następnie wyestymujemy współczynniki w klasycznym modelu regresji, aby ostatecznie sprawdzić, czy uzyskane residua spełniają oczekiwane założenia.
 	
 	Życzymy Czytelnikowi miłej lektury.
 	
@@ -70,7 +70,7 @@
 
 \subsection{Wizualizacja danych}
 
-W przeprowadzanej przez nas analizie, zmienną zależną jest \textbf{szczęście}, natomiast zmienną niezależną jest \textbf{PKB}. Rozkład danych możemy zobaczyć na histogramach [\ref{fig:hist}]. Zauważmy, że rozkład szczęścia wydaje się bardziej symetryczny niż rozkład PKB, który sprawia wrażenie lewoskośnego. Jednakże, niestety na pierwszy rzut oka, nie przypominają nam one żadnego ze znanych rozkładów.
+W przeprowadzanej przez nas analizie zmienną zależną jest \textbf{szczęście}, natomiast zmienną niezależną jest \textbf{PKB}. Rozkład danych możemy zobaczyć na histogramach [\ref{fig:hist}]. Zauważmy, że rozkład szczęścia wydaje się bardziej symetryczny niż rozkład PKB, który sprawia wrażenie lewoskośnego. Jednakże, niestety na pierwszy rzut oka, nie przypominają nam one żadnego ze znanych rozkładów.
 
 \begin{figure}[H]
 	\begin{center}
@@ -80,7 +80,7 @@ W przeprowadzanej przez nas analizie, zmienną zależną jest \textbf{szczęści
 	\end{center}
 \end{figure}
 
-Dystrybuanty empiryczne [\ref{fig:distr}] pokazują z jakim prawdopodobieństwem natrafimy na kolejno szczęście i PKB mniejsze bądź równe od danej wartości. Gdy spojrzymy na dystrybuantę szczęścia, przypomina ona dystrybuantę rozkładu normalnego, o wariancji większej niż wariancja standardowego rozkładu normalnego. W przypadku dystrybuanty PKB, również przypomina ona rozkład normalny, jednak z przesuniętą średnią. 
+Dystrybuanty empiryczne [\ref{fig:distr}] pokazują, z jakim prawdopodobieństwem natrafimy na kolejno szczęście i PKB mniejsze bądź równe od danej wartości. Gdy spojrzymy na dystrybuantę szczęścia, wydaje się, że ma ona ogony lżejsze niż rozkład normalny. Dystrybuanta PKB, tak jak jego histogram, nie jest symetryczna. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -102,7 +102,7 @@ Wykres pudełkowy (ang. \textit{boxplot}) [\ref{fig:box}] jest to graficzna repr
 
 \subsection{Podstawowe miary}
 
-W tabeli [\ref{table}] podsumowałyśmy najistotniejsze miary położenia, rozproszenia, spłaszczenia i skośności. Rzeczwiście skośność którą odczytałyśmy z histogramu dla PKB jest ujemna (zatem rozkład jest lewoskośny), natomiast skośność dla szczęścia jest niewielka. Przypuszczenia z wykresu dystrybuanty empirycznej również się sprawdziły - wariancja szczęścia jest większa od jeden. 
+W tabeli [\ref{table}] podsumowałyśmy najistotniejsze miary położenia, rozproszenia, spłaszczenia i skośności. Rzeczywiście skośność, którą odczytałyśmy z histogramu PKB, jest ujemna (zatem rozkład jest lewoskośny), natomiast skośność szczęścia jest niewielka. Przypuszczenia z wykresu dystrybuanty empirycznej również się sprawdziły --- kurtoza szczęscia jest mniejsza od 3 więc rozkład ten jest platokurtyczny. 
 
 
 \begin{table}[H]
@@ -146,12 +146,13 @@ Na podstawie wykresu rozproszenia [\ref{fig:rozproszenie}] możemy stwierdzić, 
 
 \subsection{Punktowa estymacja współczynników}
 
-Współczynniki regresji liniowej wyznaczamy ze wzorów
+Współczynniki regresji liniowej wyliczamy ze wzorów
 \begin{equation}
 \left\{ \begin{array}{ll}
-	\beta_{1} = r\frac{S_{y}}{S_{x}}\\
-	\beta_{0} = \bar{y} - r\beta_{1}\bar{x}
+	\hat{\beta}_{1} = r\frac{S_{y}}{S_{x}}\\
+	\hat{\beta}_{0} = \bar{y} - r\beta_{1}\bar{x}
 \end{array} \right.,
+\label{eq:wspol_reg}
 \end{equation} gdzie
 \begin{equation}
 	r = \frac{1}{n-1}\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{S_{x}S_{y}},
@@ -179,11 +180,11 @@ Wzory te zostały wyznaczone przy pomocy metody najmniejszych kwadratów.
 	\end{center}
 \end{figure}
 
-Z powyższych wzorów otrzymaliśmy 
+Z powyższych wzorów otrzymaliśmy współczynniki o wartościach
 \begin{equation}
 	\left\{ \begin{array}{ll}
-		\beta_{1} \approx 2.32\\
-		\beta_{0} \approx 3.32
+		\hat{\beta}_{1} \approx 2.32\\
+		\hat{\beta}_{0} \approx 3.32
 	\end{array} \right..
 \end{equation}
 Współczynniki te opisują prostą widoczną na wykresie [\ref{fig:prosta}].
@@ -210,14 +211,66 @@ Przyjmując $\alpha = 0.05$ otrzymujemy zatem, że z 95\% prawdopodobieństwem
 
 \subsection{Ocena poziomu zależności}
 
+Poziom zależności liniowej pomiędzy zmiennymi można ocenić przy pomocy wielu różnych współczynników. Jednym z nich jest współczynnik korelacji Pearsona
+\begin{equation}
+	r = \frac{1}{n-1}\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{S_{x}S_{y}},
+\end{equation}
+gdzie
+\begin{equation}
+S_{x} = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}},
+\end{equation}
+\begin{equation}
+S_{y} = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}},
+\end{equation}
+
+W opisywanym przypadku współczynnik ten przyjmuje wartość $r \approx 0.79$, co oznacza, że w danych występuje dosyć silna pozytywna zależność liniowa.
+ 
+Jakość dopasowania modelu możemy sprawdzić też przy pomocy współczynników SST, SSE i SSR.
+\begin{equation}
+	SST = \sum_{i=1}^{n}\left(y_i-\bar{y}\right)
+\end{equation}
+\begin{equation}
+	SSE = \sum_{i=1}^{n}\left(y_i-\hat{y}_i\right)
+\end{equation}
+\begin{equation}
+	SSR = \sum_{i=1}^{n}\left(\hat{y}_i-\bar{y}\right)
+\end{equation}
+Wiemy, że $SST = SSR + SSE$. Ponadto im mniejsze $SSE$, a zarazem $SSR$ bliższe $SST$, tym lepiej dopasowany jest model. W opisywanym przypadku otrzymaliśmy $SST \approx 997.74$, $SSE \approx 370.75$, oraz $SSR \approx 626.98$. Jak widać, $SSE$ jest znacząco mniejsze od $SSR$, zatem nasz model jest dosyć dobrze dopasowany do danych.
 \subsection{Predykcja oraz jej przedziały ufności}
 
-\subsection{Interpretacja wyników}
+W tej części wykonamy predykcję wartości zmiennej zależnej dla 20 największych obserwacji zmiennej niezależnej. W tym celu estymujemy współczynniki ze wzorów [\ref{eq:wspol_reg}], używając jednak tylko 771 obserwacji. Otrzymujemy w ten sposób 
+\begin{equation}
+	\left\{ \begin{array}{ll}
+		\beta_{1} \approx 2.36\\
+		\beta_{0} \approx 3.29
+	\end{array} \right..
+\end{equation}
+Następnie wartości dla ostatnich 20 obserwacji wyliczamy ze wzoru $\hat{Y}_0 = \hat{\beta}_0 + \hat{\beta}_{1}x_0$. Przy założeniu, że residua modelu mają rozkład normalny o nieznanej wariancji, możemy stwierdzić, że przedziały ufności dla $Y_0$ przyjmują postać
+\begin{equation}
+	P\left(\hat{Y}_0 - t_{n-2}\left(1-\frac{\alpha}{2}\right)S\sqrt{1+\frac{1}{n}+\frac{(x_0-\bar{x}_n)^2}{\sum_{i=1}^{n}(x_i - \bar{x}_n)^2}} \leqslant Y_0 \leqslant \hat{Y}_0 + t_{n-2}\left(1-\frac{\alpha}{2}\right)S\sqrt{1+\frac{1}{n}+\frac{(x_0-\bar{x}_n)^2}{\sum_{i=1}^{n}(x_i - \bar{x}_n)^2}}\right) = 1-\alpha.
+\end{equation}
+Rezulaty powyższej procedury można zobaczyć na wykresie [\ref{fig:predykcja}].
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.6]{pred.pdf}
+		\caption{Predykcja dla ostatnich 20 obserwacji zmiennej niezależnej}
+		\label{fig:predykcja}
+	\end{center}
+\end{figure}
 
 \section{Analiza residuów}
+\subsection{Wstęp}
 
-W tej części, przeprowadzimy analizę residuów. Dzięki temu możemy ocenić czy model regresji liniowej jest dobrym wyborem dla naszego zbioru danych. Pod nazwą residuum mamy na myśli różnicę między wyestymowaną wartością, a wartością rzeczywistą.
+W tej części przeprowadzimy analizę residuów. Dzięki temu możemy ocenić czy model regresji liniowej jest dobrym wyborem dla naszego zbioru danych. Pod nazwą residuum mamy na myśli różnicę między wartością wyestymowaną a rzeczywistą.
 
+\begin{equation}
+	e_i = y_i - \hat(y)_i
+\end{equation}
+
+W klasycznym modelu regresji zakładamy, że residua mają średnią równą 0, stałą wariancję, są niezależne od siebie nawzajem i mają rozkład normalny.
+
+\subsection{Średnia i wariancja}
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{res.pdf}
@@ -226,7 +279,7 @@ W tej części, przeprowadzimy analizę residuów. Dzięki temu możemy ocenić 
 	\end{center}
 \end{figure}
 
-Na wykresie [\ref{fig:res}] przedstawione zostały residua z regresji liniowej szczęścia w zależności od PKB. Czerwona linia oznacza średnią, która jest bliska zeru. Na pierwszy rzut oka, widzimy że wariancja jest mniej więcej równa na całej długości osi zmiennej niezależnej. Aby upewnić się czy nasze przewidywanie jest słuszne, wykonamy test Levene'a jednorodności wariancji [\ref{levene}]. 
+Na wykresie [\ref{fig:res}] przedstawione zostały residua z regresji liniowej szczęścia w zależności od PKB. Czerwona linia oznacza średnią, która jest bliska zeru. Na pierwszy rzut oka widzimy, że wariancja jest raczej równa na całej długości osi zmiennej niezależnej. Aby upewnić się, czy nasze przewidywanie jest słuszne, wykonamy test Levene'a jednorodności wariancji [\ref{levene}]. 
 
 \begin{lstlisting}[language=Python, caption=Test Levene'a, label={levene}]
 	stat, p_value = scipy.stats.levene(random.sample(residuals,350),random.sample(residuals,350))
@@ -239,9 +292,13 @@ Na wykresie [\ref{fig:res}] przedstawione zostały residua z regresji liniowej s
 	Wariancja jest raczej stala.
 \end{lstlisting}
 
-Po wykonaniu testu nie mamy podstaw aby odrzucić hipotezę zerową: "Wszystkie próbki są z populacji o równej wariancji". Teraz będziemy chciały sprawdzić czy residua są niezależne. Ponieważ na wykresie [\ref{fig:res}] trudno dostrzec zależność, wykonamy test Durbina-Watsona [\ref{durbin}].
+Po wykonaniu testu nie mamy podstaw, aby odrzucić hipotezę zerową: "Wszystkie próbki są z populacji o równej wariancji". 
 
-\begin{lstlisting}[language=Python, caption=Test Levene'a, label={durbin}]
+\subsection{Niezależność}
+
+Następnie będziemy chciały sprawdzić, czy residua są niezależne. Ponieważ na wykresie [\ref{fig:res}] trudno dostrzec zależność, wykonamy test Durbina-Watsona [\ref{durbin}].
+
+\begin{lstlisting}[language=Python, caption=Test Durbina-Watsona, label={durbin}]
 	from statsmodels.stats.stattools import durbin_watson as dwtest
 	dwtest(resids=np.array(residuals))
 	
@@ -249,7 +306,7 @@ Po wykonaniu testu nie mamy podstaw aby odrzucić hipotezę zerową: "Wszystkie 
 	1.2617265161048754
 \end{lstlisting}
 
-Jeżeli wynik jest bliski 2 oznacza to, że residua nie są skorelowane. W naszym przypadku, test sugeruje dodatnią korelację, co możemy również zobrazować na wykresie [\ref{fig:acor}], który wykorzystuje funkcję \code{acf} z pakietu \code{statsmodels.tsa.stattools}, aby policzyć autokorelację.
+Jeżeli wynik jest bliski 2, oznacza to, że residua nie są skorelowane. W naszym przypadku test sugeruje dodatnią korelację, co możemy również zobrazować na wykresie [\ref{fig:acor}], który wykorzystuje funkcję \code{acf} z pakietu \code{statsmodels.tsa.stattools}, aby policzyć autokorelację.
 
 \begin{figure}[H]
 	\begin{center}
@@ -258,6 +315,8 @@ Jeżeli wynik jest bliski 2 oznacza to, że residua nie są skorelowane. W naszy
 		\label{fig:acor}
 	\end{center}
 \end{figure}
+
+\subsection{Normalność rozkładu}
 
 Na koniec, sprawdzimy jeszcze, czy rozkład residuów jest normalny. W tym celu porównamy ich histogram z gęstością rozkładu normalnego [\ref{fig:res_hist}]. 
 \begin{figure}[H]
