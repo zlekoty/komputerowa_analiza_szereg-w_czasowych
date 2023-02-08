@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  8 FEB 2023 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  8 FEB 2023 21:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,7 +906,14 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
 
 (c:/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./kaszczR2.toc)
+) (./kaszczR2.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 4.
+)
 \tf@toc=\write4
 \openout4 = `kaszczR2.toc'.
 
@@ -914,7 +921,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<obrazki//plot1.pdf, id=48, 722.7pt x 361.35pt>
+<obrazki//plot1.pdf, id=83, 722.7pt x 361.35pt>
 File: obrazki//plot1.pdf Graphic file (type pdf)
 <use obrazki//plot1.pdf>
 Package pdftex.def Info: obrazki//plot1.pdf  used on input line 76.
@@ -924,7 +931,7 @@ Overfull \hbox (25.29878pt too wide) in paragraph at lines 76--77
  [] 
  []
 
-<obrazki//acf1.pdf, id=49, 433.62pt x 289.08pt>
+<obrazki//acf1.pdf, id=84, 433.62pt x 289.08pt>
 File: obrazki//acf1.pdf Graphic file (type pdf)
 <use obrazki//acf1.pdf>
 Package pdftex.def Info: obrazki//acf1.pdf  used on input line 86.
@@ -934,13 +941,7 @@ Overfull \hbox (1.77104pt too wide) in paragraph at lines 86--87
  [][] 
  []
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 89.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 89.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 89.
-<obrazki//pacf1.pdf, id=50, 433.62pt x 289.08pt>
+<obrazki//pacf1.pdf, id=85, 433.62pt x 289.08pt>
 File: obrazki//pacf1.pdf Graphic file (type pdf)
 <use obrazki//pacf1.pdf>
 Package pdftex.def Info: obrazki//pacf1.pdf  used on input line 92.
@@ -953,7 +954,7 @@ Overfull \hbox (1.77104pt too wide) in paragraph at lines 92--93
 [2
 
  <./obrazki//plot1.pdf>]
-<obrazki//plot2.pdf, id=99, 722.7pt x 361.35pt>
+<obrazki//plot2.pdf, id=134, 722.7pt x 361.35pt>
 File: obrazki//plot2.pdf Graphic file (type pdf)
 <use obrazki//plot2.pdf>
 Package pdftex.def Info: obrazki//plot2.pdf  used on input line 103.
@@ -976,7 +977,7 @@ Overfull \hbox (11.72354pt too wide) in paragraph at lines 109--110
 [][][], a kon-kret-nie funk-cji [][][][][][],
  []
 
-<obrazki//plot3.pdf, id=101, 722.7pt x 361.35pt>
+<obrazki//plot3.pdf, id=136, 722.7pt x 361.35pt>
 File: obrazki//plot3.pdf Graphic file (type pdf)
 <use obrazki//plot3.pdf>
 Package pdftex.def Info: obrazki//plot3.pdf  used on input line 113.
@@ -995,7 +996,7 @@ le pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./obrazki//plot2.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
 >]
-<obrazki//plot4.pdf, id=207, 722.7pt x 361.35pt>
+<obrazki//plot4.pdf, id=242, 722.7pt x 361.35pt>
 File: obrazki//plot4.pdf Graphic file (type pdf)
 <use obrazki//plot4.pdf>
 Package pdftex.def Info: obrazki//plot4.pdf  used on input line 123.
@@ -1006,7 +1007,7 @@ Overfull \hbox (25.29878pt too wide) in paragraph at lines 123--124
  []
 
 [4 <./obrazki//plot3.pdf>]
-<obrazki//acf2.pdf, id=254, 433.62pt x 289.08pt>
+<obrazki//acf2.pdf, id=289, 433.62pt x 289.08pt>
 File: obrazki//acf2.pdf Graphic file (type pdf)
 <use obrazki//acf2.pdf>
 Package pdftex.def Info: obrazki//acf2.pdf  used on input line 133.
@@ -1016,7 +1017,7 @@ Overfull \hbox (1.77104pt too wide) in paragraph at lines 133--134
  [][] 
  []
 
-<obrazki//pacf2.pdf, id=255, 433.62pt x 289.08pt>
+<obrazki//pacf2.pdf, id=290, 433.62pt x 289.08pt>
 File: obrazki//pacf2.pdf Graphic file (type pdf)
 <use obrazki//pacf2.pdf>
 Package pdftex.def Info: obrazki//pacf2.pdf  used on input line 139.
@@ -1051,20 +1052,14 @@ land / samouczki / testyNormalnosci / testyNormalnosci .
  []
 
 [7] (./kaszczR2.aux)
-
-Package rerunfilecheck Warning: File `kaszczR2.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `kaszczR2.out':
-(rerunfilecheck)             Before: D00841DD51F3D45B1A25C101A4DF0D92;881
-(rerunfilecheck)             After:  F50D2A8CF9842D3DC99521E62C10C94C;1974.
+Package rerunfilecheck Info: File `kaszczR2.out' has not changed.
+(rerunfilecheck)             Checksum: F50D2A8CF9842D3DC99521E62C10C94C;1974.
  ) 
 Here is how much of TeX's memory you used:
- 17473 strings out of 478994
- 291792 string characters out of 5862207
- 695387 words of memory out of 5000000
- 34595 multiletter control sequences out of 15000+600000
+ 17480 strings out of 478994
+ 291899 string characters out of 5862207
+ 694387 words of memory out of 5000000
+ 34602 multiletter control sequences out of 15000+600000
  456123 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  97i,9n,117p,605b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1080,10 +1075,10 @@ mf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type
 r17.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texliv
 e/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2021/texmf-dist/
 fonts/type1/public/lm/lmtt10.pfb>
-Output written on kaszczR2.pdf (7 pages, 336448 bytes).
+Output written on kaszczR2.pdf (7 pages, 339394 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
+ 456 PDF objects out of 1000 (max. 8388607)
+ 204 compressed objects within 3 object streams
  31 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 
