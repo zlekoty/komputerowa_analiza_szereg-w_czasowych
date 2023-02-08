@@ -15,7 +15,7 @@
 \mathtoolsset{showonlyrefs,mathic}
 \title{Analiza danych rzeczywistych przy pomocy modelu ARMA}
 \author{Natalia Klepacka, Joanna Kołaczek}
-\date{\today}
+\date{08.02.2023}
 \newtheoremstyle{break}
 {\topsep}{\topsep}%
 {\normalfont}{}%
@@ -62,97 +62,58 @@
 	\clearpage
 	\section{Wstęp}
 	Niniejszy raport powstał na potrzeby realizacji laboratorium z Komputerowej Analizy Szeregów Czasowych, prowadzonych przez mgr Justynę Witulską, do wykładu prof. Agnieszki Wyłomańskiej.
-	Będziemy analizować dane dotyczące średniej dziennej temperatury w Londynnie, na przestrzeni lat 1979-2021. Dysponujemy 15304 obeserwacjami, jednak chcąc aby analiza była bardziej precyzyjna, będziemy rozważać tylko pierwszych 3040. Dane pochodzą \href{https://www.kaggle.com/datasets/emmanuelfwerr/london-weather-data }{\textit{z tej strony}}. Są to informacje kolekcjonowane przez European Climate Assessment and Dataset - projekt zbierający dane o pogodzie w Europie.
-	W raporcie przyjrzymy się przebiegowi dekompozycji Walda, oraz przy pomocy kryteriów informacyjnych dobierzemy rzędy modelu ARMA aby następnie wyestymować wartości parametrów tegoż modelu. Zweryfikujemy również, czy założenia dotyczące szumu się zgadzają.
-
-Życzymy Czytelnikowi miłej lektury.
-
-\section{Przygotowanie danych do analizy}
-
-Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej temperatury w Londynie, w zależności od czasu. Wyraźnie widoczna jest sezonowość, natomiast nie możemy być pewni co do obecności trendu. Wykresy autokorelacji [\ref{fig:acf1}] oraz częściowej autokorelacji [\ref{fig:pacf1}] potwierdzają, że nie możemy mówić tu o szeregu stacjonarnym.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.63]{plot1.pdf}
-		\caption{Wykres temperatury w Londynie}
-		\label{fig:p1}
-	\end{center}
-\end{figure}
-
-	\begin{figure}[H]
-	\begin{center}
-		\begin{minipage}{0.49\linewidth}
-			\centering
-			\includegraphics[scale=0.49]{acf1.pdf}
-			\caption{Autokorelacja}
-			\label{fig:acf1}
-		\end{minipage}
-		\begin{minipage}{0.49\linewidth}
-			\centering
-			\includegraphics[scale=0.49]{pacf1.pdf}
-			\caption{Częściowa autokorelacja}
-			\label{fig:pacf1}
-		\end{minipage}
-	\end{center}
-\end{figure}
-
-Aby usunąć możliwy trend, stosujemy dla naszych danych regresję liniową. Efekt widzimy na wykresie [\ref*{fig:p2}]. Obliczony współczynnik kierunkowy był bardzo bliski zeru co oznacza, że w danych nie występuje trend liniowy, natomiast wyraz wolny wyniósł około 10, odejmujemy tą wartość od wartości oryginalnych aby je ustandaryzować. (?????????/)
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.63]{plot2.pdf}
-		\caption{Regresja liniowa}
-		\label{fig:p2}
-	\end{center}
-\end{figure}
-
-Kolejnym krokiem będzie próba usunięcia sezonowości. Na poprzednich wykresach mogliśmy zauważyć, że dane układają się w kształt funkcji sinusoidalnej. Załóżmy, że da się je opisać przy pomocy funkcji $f(x) = c\cdot\sin(d\cdot x+e)$. Używamy pakietu \code{scipy}, a konkretnie funkcji \code{optimize.curve\_fit}, aby dopasować odpowiednie współczynniki $c$, $d$, $e$. Efekt widzimy na wykresie \ref{fig:p3}.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.63]{plot3.pdf}
-		\caption{Krzywa sinusoidalna}
-		\label{fig:p3}
-	\end{center}
-\end{figure}
-
-Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartości otrzymanej funkcji w danym czasie [\ref{fig:p4}]. Możemy teraz ponownie sprawdzić jak prezentują się wykresy autokorelacji i częściowej autokorelacji. ...............
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.63]{plot4.pdf}
-		\caption{Dane po dekompozycji}
-		\label{fig:p4}
-	\end{center}
-\end{figure}
-
-\begin{figure}[H]
-	\begin{center}
-		\begin{minipage}{0.49\linewidth}
-			\centering
-			\includegraphics[scale=0.49]{acf2.pdf}
-			\caption{Autokorelacja}
-			\label{fig:acf2}
-		\end{minipage}
-		\begin{minipage}{0.49\linewidth}
-			\centering
-			\includegraphics[scale=0.49]{pacf2.pdf}
-			\caption{Częściowa autokorelacja}
-			\label{fig:pacf2}
-		\end{minipage}
-	\end{center}
-\end{figure}
-
-\section{Ocena dopasowania modelu}
-
-Musimy teraz dobrać rząd modelu ARMA(p,q). Do wykonania tego posłużą nam kryteria informacyjne.
-
-
-\section{Weryfikacja założeń dotyczących szumu}
-
-
-
-
+	Będziemy analizować dane dotyczące poziomu szczęścia w wybranych krajach na świecie oraz jego związku z wartością PKB na osobę (w dalszej części raportu, będziemy je określać skrótowo jako szczęście i PKB). Po usunięciu wartości brakujących dysponujemy próbami o wielkości~791. Dane pochodzą \href{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}{\textit{z tej strony}}. Są to wyniki uzyskane przez Instytut Gallupa, w ankietach badających poziom szczęścia oraz jego możliwe indykatory, zebrane  w latach 2015-2020. W raporcie przeprowadzimy analizę jednowymiarową dla dwóch zmiennych oraz zwizualizujemy je przy pomocy histogramu, dystrybuanty empirycznej oraz boxplotu. Następnie wyestymujemy współczynniki w klasycznym modelu regresji, aby ostatecznie sprawdzić, czy uzyskane residua spełniają oczekiwane założenia.
+	
+	Życzymy Czytelnikowi miłej lektury.
+	
+	\section{Przygotowanie danych do analizy}
+	
+	\section{Modelowanie danych przy pomocy ARMA}
+	
+	\subsection{Dobranie rzędu modelu}
+	
+	W celu dobrania rzędu modelu, wyliczyłyśmy wartości kilku kryteriów informacyjnych
+	\begin{itemize}
+		\item Kryterium Informacyjne Akaikego (AIC),
+		\item Bayesowskie Kryterium Informacyjne (BIC),
+		\item Kryterium Informacyjne Hannana-Quinna (HQIC)
+	\end{itemize}
+	dla wartości $p$ i $q$ z przedziału $[0, 9]$. Otrzymałyśmy wyniki jak w tabelach poniżej. Najlepiej dopasowane pary wg poszczególnych kryteriów to
+	\begin{itemize}
+		\item $p=5$, $q=6$ dla AIC,
+		\item $p=1$, $q=1$ dla BIC,
+		\item $p=3$, $q=0$ dla HQIC.
+	\end{itemize}
+	Jako że nie da się określić modelu jednoznacznie najlepiej dopasowanego, 
+	do dalszej analizy zdecydowałyśmy się przyjąć najmniej skomplikowany z powyższych modeli, czyli ARMA(1, 1).
+	
+	\subsection{Estymacja parametrów modelu}
+	
+	Do estymacji parametrów wykorzystamy metodę największej wiarygodności zaimplementowaną w pythonowym pakiecie statsmodels. Metoda ta zakłada, że zmienne składające się na szum mają rozkład normalny. Wartości współczynników można zobaczyć w tabeli poniżej.
+	
+	\section{Ocena dopasowania modelu}
+	
+	\section{Weryfikacja założeń dotyczących szumu}
+	
+	Szum ${Z_t}$ w modelu ARMA powinien spełniać poniższe założenia:
+	\begin{enumerate}
+		\item Średnia ${Z_t}$ jest bliska 0
+		\item Wariancja ${Z_t}$ jest taka sama dla każdego $t$
+		\item ${Z_t}$ są niezależne
+		\item ${Z_t}$ mają rozkład normalny
+	\end{enumerate}
+	
+	\subsection{Średnia}
+	Na podstawie wykresu możemy stwierdzić, że średnia prawdopodobnie jest równa 0. Dodatkowo możemy to sprawdzić przy pomocy testu t. Test ten sprawdza hipotezę zerową "Średnia z próby jest równa $\mu$" przeciwko hipotezie alternatywnej "Średnia z próby jest różna od $\mu$". Jak widać poniżej, wynik testu potwierdza wnioski wyciągnięte z wykresu — nie ma podstaw do odrzucenia zerowej.
+	
+	\subsection{Wariancja}
+	Na wykresie nie widać znaczących zmian w wariancji zależnych od czasu, jednak dla pewności wykonamy test 
+	
+	\subsection{Niezależność}
+	
+	\subsection{Normalność rozkładu}
+	
+	
 	\section{Podsumowanie}
 	
 	Na podstawie przeprowadzonej analizy możemy stwierdzić, że między poziomem szczęścia a PKB per capita dla danego kraju występuje dosyć silna zależność liniowa. Niestety badanie residuów wykazało, że nie mają one rozkładu normalnego. Oznacza to, że co prawda punktowe estymacje zostały przez nas wykonane poprawnie, jednak wszystkie estymacje przedziałowe oparte były o założenie o normalności rozkładu residuów, zatem nie mają zastosowania w tym modelu. Niestety nie znając rozkładu $\epsilon$, nie możemy wyznaczyć faktycznych przedziałów ufności.
