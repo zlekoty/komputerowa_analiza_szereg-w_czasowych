@@ -2,12 +2,11 @@
 \contentsline {section}{\numberline {2}Przygotowanie danych do analizy}{2}{section.2}%
 \contentsline {section}{\numberline {3}Modelowanie danych przy pomocy ARMA}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Dobranie rzędu modelu}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Estymacja parametrów modelu}{6}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Ocena dopasowania modelu}{6}{section.4}%
-\contentsline {section}{\numberline {5}Weryfikacja założeń dotyczących szumu}{6}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Średnia}{6}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Wariancja}{7}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Niezależność}{7}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Normalność rozkładu}{7}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Podsumowanie}{7}{section.6}%
-\contentsline {section}{\numberline {7}Źródła}{7}{section.7}%
+\contentsline {subsection}{\numberline {3.2}Estymacja parametrów modelu}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Ocena dopasowania modelu}{7}{section.4}%
+\contentsline {section}{\numberline {5}Weryfikacja założeń dotyczących szumu}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Średnia}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Wariancja}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Niezależność}{9}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Podsumowanie}{11}{section.6}%
+\contentsline {section}{\numberline {7}Źródła}{11}{section.7}%

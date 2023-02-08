@@ -62,14 +62,14 @@
 	\clearpage
 	\section{Wstęp}
 	Niniejszy raport powstał na potrzeby realizacji laboratorium z Komputerowej Analizy Szeregów Czasowych, prowadzonych przez mgr Justynę Witulską, do wykładu prof. Agnieszki Wyłomańskiej.
-	Będziemy analizować dane dotyczące średniej dziennej temperatury w Londynnie, na przestrzeni lat 1979-2021. Dysponujemy 15304 obeserwacjami, jednak chcąc aby analiza była bardziej precyzyjna, będziemy rozważać tylko pierwszych 3040. Dane pochodzą \href{https://www.kaggle.com/datasets/emmanuelfwerr/london-weather-data }{\textit{z tej strony}}. Są to informacje kolekcjonowane przez European Climate Assessment and Dataset - projekt zbierający dane o pogodzie w Europie.
-	W raporcie przyjrzymy się przebiegowi dekompozycji Walda, oraz przy pomocy kryteriów informacyjnych dobierzemy rzędy modelu ARMA aby następnie wyestymować wartości parametrów tegoż modelu. Zweryfikujemy również, czy założenia dotyczące szumu się zgadzają.
+	Będziemy analizować dane dotyczące średniej dziennej temperatury w Londynie, na przestrzeni lat 1979-1987. Dane pochodzą \href{https://www.kaggle.com/datasets/emmanuelfwerr/london-weather-data }{\textit{z tej strony}}. Są to informacje kolekcjonowane przez European Climate Assessment and Dataset - projekt zbierający dane o pogodzie w Europie.
+	W raporcie przeprowadzimy dekompozycji Walda oraz przy pomocy kryteriów informacyjnych dobierzemy rzędy modelu ARMA, aby następnie wyestymować wartości parametrów tegoż modelu. Na koniec zweryfikujemy również, czy założenia dotyczące szumu są spełnione.
 
 Życzymy Czytelnikowi miłej lektury.
 
 \section{Przygotowanie danych do analizy}
 
-Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej temperatury w Londynie, w zależności od czasu. Wyraźnie widoczna jest sezonowość, natomiast nie możemy być pewni co do obecności trendu. Wykresy autokorelacji [\ref{fig:acf1}] oraz częściowej autokorelacji [\ref{fig:pacf1}] potwierdzają, że nie możemy mówić tu o szeregu stacjonarnym.
+Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej temperatury w Londynie od czasu. Wyraźnie widoczna jest sezonowość, natomiast nie możemy być pewni co do obecności trendu. Wykresy autokorelacji [\ref{fig:acf1}] oraz częściowej autokorelacji [\ref{fig:pacf1}] potwierdzają, że nie możemy mówić tu o szeregu stacjonarnym.
 
 \begin{figure}[H]
 	\begin{center}
@@ -83,20 +83,20 @@ Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej te
 	\begin{center}
 		\begin{minipage}{0.49\linewidth}
 			\centering
-			\includegraphics[scale=0.49]{acf1.pdf}
+			\includegraphics[scale=0.49]{acf1.png}
 			\caption{Autokorelacja}
 			\label{fig:acf1}
 		\end{minipage}
 		\begin{minipage}{0.49\linewidth}
 			\centering
-			\includegraphics[scale=0.49]{pacf1.pdf}
+			\includegraphics[scale=0.49]{pacf1.png}
 			\caption{Częściowa autokorelacja}
 			\label{fig:pacf1}
 		\end{minipage}
 	\end{center}
 \end{figure}
 
-Aby usunąć możliwy trend, stosujemy dla naszych danych regresję liniową. Efekt widzimy na wykresie [\ref*{fig:p2}]. Obliczony współczynnik kierunkowy był bardzo bliski zeru co oznacza, że w danych nie występuje trend liniowy, natomiast wyraz wolny wyniósł około 10, odejmujemy tą wartość od wartości oryginalnych aby ich średnia była 
+Aby usunąć możliwy trend, stosujemy dla naszych danych regresję liniową. Efekt widzimy na wykresie [\ref*{fig:p2}]. Obliczony współczynnik kierunkowy był bardzo bliski 0, co oznacza, że w danych nie występuje trend liniowy. Wyraz wolny wyniósł około 10, więc odejmujemy tę wartość od wartości oryginalnych, aby ich średnia była bliska 0.
 
 \begin{figure}[H]
 	\begin{center}
@@ -116,7 +116,7 @@ Kolejnym krokiem będzie próba usunięcia sezonowości. Na poprzednich wykresac
 	\end{center}
 \end{figure}
 
-Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartości otrzymanej funkcji w danym czasie [\ref{fig:p4}]. Możemy teraz ponownie sprawdzić jak prezentują się wykresy autokorelacji i częściowej autokorelacji. Od tego momentu będziemy zakładać, że szereg czasowy jest stacjonarny w słabym sensie.
+Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartości otrzymanej funkcji w danym czasie [\ref{fig:p4}]. Możemy teraz ponownie sprawdzić, jak prezentują się wykresy autokorelacji i częściowej autokorelacji. Od tego momentu będziemy zakładać, że szereg czasowy jest stacjonarny w słabym sensie.
 
 \begin{figure}[H]
 	\begin{center}
@@ -144,7 +144,24 @@ Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartoś
 \end{figure}
 
 \section{Modelowanie danych przy pomocy ARMA}
-Musimy teraz dobrać rząd modelu ARMA(p,q). Do wykonania tego posłużą nam kryteria informacyjne.
+
+\subsection{Dobranie rzędu modelu}
+W celu dobrania rzędu modelu wyliczyłyśmy wartości kryteriów informacyjnych
+\begin{itemize}
+	\item Kryterium Informacyjne Akaikego (AIC),
+	\item Bayesowskie Kryterium Informacyjne (BIC),
+	\item Kryterium Informacyjne Hannana-Quinna (HQIC)
+\end{itemize}
+
+dla wartości $p$ i $q$ z przedziału $[0,9]$. Otrzymałyśmy winiki widoczne w tabelach [\ref{t1}][\ref{t2}][\ref{t3}]. Najlepiej dopasowane pary wg poszczególnych kryteriów to
+
+\begin{itemize}
+	\item $p=5$, $q=6$ dla AIC,
+	\item $p=1$, $q=1$ dla BIC,
+	\item $p=3$, $q=0$ dla HQIC.
+\end{itemize}
+
+Jako że nie da się określić modelu jednoznacznie najlepiej dopasowanego, do dalszej analizy zdecydowałyśmy się przyjąć najmniej skomplikowany model, czyli ARMA(1, 1).
 
 \begin{table}[H]
 	\centering
@@ -199,6 +216,11 @@ Musimy teraz dobrać rząd modelu ARMA(p,q). Do wykonania tego posłużą nam kr
 \label{t3}
 \end{table}
 
+Jako że nie da się określić modelu jednoznacznie najlepiej dopasowanego, do dalszej analizy zdecydowałyśmy się przyjąć najmniej skomplikowany model, czyli ARMA(1, 1).
+
+\subsection{Estymacja parametrów modelu}
+Do estymacji parametrów wykorzystamy metodę największej wiarygodności zaimplementowaną w pythonowym pakiecie \code{statsmodels}. Metoda ta zakłada, że zmienne składające się na szum mają rozkład normalny. Wartości współczynników można zobaczyć w tabeli [\ref{t4}]
+
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l|l|l|l|l|l|l|}
@@ -209,7 +231,7 @@ Musimy teraz dobrać rząd modelu ARMA(p,q). Do wykonania tego posłużą nam kr
 		\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{111111} ma.L1}}  & 0.1546                       & 0.023                           & 6.580                     & 0.000                                      & 0.109                            & 0.201                            \\ \hline
 		\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{111111} sigma2}} & 3.4663                       & 0.096                           & 35.996                    & 0.000                                      & 3.278                            & 3.655                            \\ \hline
 	\end{tabular}
-\caption{Statystyki ARIMA}
+\caption{Współczynniki modelu}
 \label{t4}
 \end{table}
 
@@ -227,13 +249,28 @@ Szum ${Z_t}$ w modelu ARMA powinien spełniać poniższe założenia:
 	\item ${Z_t}$ mają rozkład normalny
 \end{enumerate}
 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.63]{res.png}
+		\caption{Residua modelu}
+		\label{fig:res}
+	\end{center}
+\end{figure}
+
 \subsection{Średnia}
-Na podstawie wykresu możemy stwierdzić, że średnia prawdopodobnie jest równa 0. Dodatkowo możemy to sprawdzić przy pomocy testu t. Test ten sprawdza hipotezę zerową "Średnia z próby jest równa $\mu$" przeciwko hipotezie alternatywnej "Średnia z próby jest różna od $\mu$". Jak widać poniżej, wynik testu potwierdza wnioski wyciągnięte z wykresu — nie ma podstaw do odrzucenia zerowej.
+Na podstawie wykresu[\ref{fig:res}] możemy stwierdzić, że średnia prawdopodobnie jest równa 0. Dodatkowym sprawdzeniem może być wykonanie testu t. Test ten sprawdza hipotezę zerową "Średnia z próby jest równa $\mu$" przeciwko hipotezie alternatywnej "Średnia z próby jest różna od $\mu$". Jak widać poniżej[\ref{srednia}], wynik testu potwierdza wnioski wyciągnięte z wykresu — nie ma podstaw do odrzucenia hipotezy zerowej.
+
+\begin{lstlisting}[language=Python, caption=Test t, label={srednia}]
+	sp.stats.ttest_1samp(resid, popmean=0)
+	
+	#output
+	Ttest_1sampResult(statistic=0.04706184306961072, pvalue=0.9624674462497231)
+\end{lstlisting}
 
 \subsection{Wariancja}
-Na wykresie nie widać znaczących zmian w wariancji zależnych od czasu, jednak dla pewności wykonamy test 
+Na wykresie[\ref{fig:res}] nie widać znaczących zmian w wariancji zależnych od czasu, jednak dla pewności wykonamy test Levene'a jednorodności wariancji. Test ten sprawdza hipotezę zerową "Wszystkie próbki pochodzą z populacji o tej samej wariancji" przeciwko hipotezie alternatywnej "Przynajmniej dwie próbki pochodzą z populacji o różnych wariancjach". W tym celu dzieli próbkę na mniejsze podgrupy i porównuje ze sobą ich mediany.
 
-\begin{lstlisting}[language=Python, caption=Test D'Agostino-Pearsona, label={norm}]
+\begin{lstlisting}[language=Python, caption=Test Levene'a, label={var}]
 	stat, p_value = scipy.stats.levene(random.sample(model.resid,500),random.sample(model.resid,500))
 	if p_value > 0.05:
 	print("Wariancja jest raczej stala.")
@@ -244,14 +281,50 @@ Na wykresie nie widać znaczących zmian w wariancji zależnych od czasu, jednak
 	Wariancja jest raczej stala.
 \end{lstlisting}
 
+Zgodnie z wynikiem testu[\ref{var}] nie ma podstaw do odrzucenia hipotezy zerowej, zatem możemy przyjąć, że wariancja residuów prawdopodobnie jest stała.
+
 \subsection{Niezależność}
-Z wykresów funkcji autokorelacji i częściowej autokorelacji można łatwo wywnioskować, że residua są realizacjami niezależnych zmiennych losowych.
+Z wykresów funkcji autokorelacji[\ref{fig:acf_res}] i częściowej autokorelacji[\ref{fig:pacf_res}] można łatwo wywnioskować, że residua są realizacjami niezależnych zmiennych losowych.
 
-\subsection{Normalność rozkładu}
+\begin{figure}[H]
+	\begin{center}
+		\begin{minipage}{0.49\linewidth}
+			\centering
+			\includegraphics[scale=0.49]{acf_res.png}
+			\caption{Autokorelacja}
+			\label{fig:acf_res}
+		\end{minipage}
+		\begin{minipage}{0.49\linewidth}
+			\centering
+			\includegraphics[scale=0.49]{pacf_res.png}
+			\caption{Częściowa autokorelacja}
+			\label{fig:pacf_res}
+		\end{minipage}
+	\end{center}
+\end{figure}
 
-Dystrybuanta rozkładu residuów niemal idealnie pokrywa się z dystrybuantą rozkładu normalnego. Podobnie histogram wartości dobrze przybliża teoretyczną gęstość. Wykres kwantylowy pokrywa się odrobinę gorzej, ale nadal wystarczająco dobrze, żebyśmy mogli uznać, że dane pochodzą z rozkładu normalnego.
-
-
+Dystrybuanta rozkładu residuów niemal idealnie pokrywa się z dystrybuantą rozkładu normalnego[\ref{fig:res_dist}]. Podobnie histogram wartości[\ref{fig:res_pdf}] dobrze przybliża teoretyczną gęstość. Wykres kwantylowy[\ref{fig:res_qq}] pokrywa się odrobinę gorzej, ale nadal wystarczająco dobrze, żebyśmy mogli uznać, że dane pochodzą z rozkładu normalnego.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.63]{res_dist.png}
+		\caption{Dystrybuanta residuów}
+		\label{fig:res_dist}
+	\end{center}
+\end{figure} 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.63]{res_pdf.png}
+		\caption{Gęstość residuów}
+		\label{fig:res_pdf}
+	\end{center}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.63]{res_qq.png}
+		\caption{Wykres kwantylowy}
+		\label{fig:res_qq}
+	\end{center}
+\end{figure}
 
 	\section{Podsumowanie}
 	
