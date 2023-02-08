@@ -145,7 +145,7 @@ Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartoś
 
 \section{Modelowanie danych przy pomocy ARMA}
 
-\subsection{Dobranie rzędu modelu}
+\subsection{Dobór rzędu modelu}
 W celu dobrania rzędu modelu wyliczyłyśmy wartości kryteriów informacyjnych
 \begin{itemize}
 	\item Kryterium Informacyjne Akaikego (AIC),
@@ -236,7 +236,24 @@ Do estymacji parametrów wykorzystamy metodę największej wiarygodności zaimpl
 \end{table}
 
 \section{Ocena dopasowania modelu}
+\begin{figure}[H]
+	\begin{center}
+		\begin{minipage}{0.49\linewidth}
+			\centering
+			\includegraphics[scale=0.49]{acf2.pdf}
+			\caption{Autokorelacja}
+			\label{fig:acf2}
+		\end{minipage}
+		\begin{minipage}{0.49\linewidth}
+			\centering
+			\includegraphics[scale=0.49]{pacf2.pdf}
+			\caption{Częściowa autokorelacja}
+			\label{fig:pacf2}
+		\end{minipage}
+	\end{center}
+\end{figure}
 
+Od pewnego momentu wszystkie wartości funkcji autokorelacji i częściowej autokorelacji mieszczą się w przedziałach ufności, co sugeruje, że model jest dobrze dopasowany do danych.
 
 
 \section{Weryfikacja założeń dotyczących szumu}
@@ -333,9 +350,10 @@ Dystrybuanta rozkładu residuów niemal idealnie pokrywa się z dystrybuantą ro
 	\section{Źródła}
 	\begin{itemize}
 		\item Wykłady
-		\item \url{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}
-		\item \url{https://www.itl.nist.gov/div898/handbook/eda/section3/eda35a.html}
-		\item \url{http://tofesi.mimuw.edu.pl/~cogito/smarterpoland/samouczki/testyNormalnosci/testyNormalnosci.pdf} str.11
+		\item Dokumentacja pakietów \code{statsmodels} i \code{scipy}
+		\item \url{https://www.kaggle.com/datasets/emmanuelfwerr/london-weather-data}
+		\item \url{https://en.wikipedia.org/wiki/Student%27s_t-test}
+		\item \url{https://en.wikipedia.org/wiki/Levene%27s_test}
 		
 	\end{itemize}
 	
