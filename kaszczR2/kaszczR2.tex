@@ -96,7 +96,7 @@ Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej te
 	\end{center}
 \end{figure}
 
-Aby usunąć możliwy trend, stosujemy dla naszych danych regresję liniową. Efekt widzimy na wykresie [\ref*{fig:p2}]. Obliczony współczynnik kierunkowy był bardzo bliski zeru co oznacza, że w danych nie występuje trend liniowy, natomiast wyraz wolny wyniósł około 10, odejmujemy tą wartość od wartości oryginalnych aby je ustandaryzować. (?????????/)
+Aby usunąć możliwy trend, stosujemy dla naszych danych regresję liniową. Efekt widzimy na wykresie [\ref*{fig:p2}]. Obliczony współczynnik kierunkowy był bardzo bliski zeru co oznacza, że w danych nie występuje trend liniowy, natomiast wyraz wolny wyniósł około 10, odejmujemy tą wartość od wartości oryginalnych aby ich średnia była 
 
 \begin{figure}[H]
 	\begin{center}
@@ -116,7 +116,7 @@ Kolejnym krokiem będzie próba usunięcia sezonowości. Na poprzednich wykresac
 	\end{center}
 \end{figure}
 
-Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartości otrzymanej funkcji w danym czasie [\ref{fig:p4}]. Możemy teraz ponownie sprawdzić jak prezentują się wykresy autokorelacji i częściowej autokorelacji. ...............
+Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartości otrzymanej funkcji w danym czasie [\ref{fig:p4}]. Możemy teraz ponownie sprawdzić jak prezentują się wykresy autokorelacji i częściowej autokorelacji. Od tego momentu będziemy zakładać, że szereg czasowy jest stacjonarny w słabym sensie.
 
 \begin{figure}[H]
 	\begin{center}
@@ -144,49 +144,80 @@ Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartoś
 \end{figure}
 
 \section{Modelowanie danych przy pomocy ARMA}
+Musimy teraz dobrać rząd modelu ARMA(p,q). Do wykonania tego posłużą nam kryteria informacyjne.
 
-\subsection{Dobranie rzędu modelu}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|r|r|r|r|r|}
+		\hline
+		\rowcolor[HTML]{C0C0C0} 
+		{\color[HTML]{343434} \textbf{p}} & {\color[HTML]{343434} \textbf{q}} & {\color[HTML]{343434} \textbf{AIC}} & {\color[HTML]{343434} \textbf{BIC}} & {\color[HTML]{343434} \textbf{HQIC}} \\ \hline
+		{\color[HTML]{343434} 5}          & {\color[HTML]{343434} 6}          & {\color[HTML]{343434} 10933.960861} & {\color[HTML]{343434} 11010.577298} & {\color[HTML]{343434} 10961.678129}  \\ \hline
+		{\color[HTML]{343434} 7}          & {\color[HTML]{343434} 8}          & {\color[HTML]{343434} 10934.090625} & {\color[HTML]{343434} 11034.281350} & {\color[HTML]{343434} 10970.336283}  \\ \hline
+		{\color[HTML]{343434} 9}          & {\color[HTML]{343434} 7}          & {\color[HTML]{343434} 10934.984168} & {\color[HTML]{343434} 11041.068465} & {\color[HTML]{343434} 10973.361923}  \\ \hline
+		{\color[HTML]{343434} 7}          & {\color[HTML]{343434} 9}          & {\color[HTML]{343434} 10935.015702} & {\color[HTML]{343434} 11041.100000} & {\color[HTML]{343434} 10973.393458}  \\ \hline
+		{\color[HTML]{343434} 4}          & {\color[HTML]{343434} 4}          & {\color[HTML]{343434} 10935.166047} & {\color[HTML]{343434} 10994.101768} & {\color[HTML]{343434} 10956.487023}  \\ \hline
+	\end{tabular}
+\caption{Kryteria informacyjne wg AIC}
+\label{t1}
+\end{table}
 
-W celu dobrania rzędu modelu, wyliczyłyśmy wartości kilku kryteriów informacyjnych
-\begin{itemize}
-	\item Kryterium Informacyjne Akaikego (AIC),
-	\item Bayesowskie Kryterium Informacyjne (BIC),
-	\item Kryterium Informacyjne Hannana-Quinna (HQIC)
-\end{itemize}
-dla wartości $p$ i $q$ z przedziału $[0, 9]$. Otrzymałyśmy wyniki jak w tabelach poniżej. Najlepiej dopasowane pary wg poszczególnych kryteriów to
-\begin{itemize}
-	\item $p=5$, $q=6$ dla AIC,
-	\item $p=1$, $q=1$ dla BIC,
-	\item $p=3$, $q=0$ dla HQIC.
-\end{itemize}
-Jako że nie da się określić modelu jednoznacznie najlepiej dopasowanego, 
-do dalszej analizy zdecydowałyśmy się przyjąć najmniej skomplikowany z powyższych modeli, czyli ARMA(1, 1).
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|r|r|r|r|r|}
+		\hline
+		\rowcolor[HTML]{C0C0C0} 
+		{\color[HTML]{111111} \textbf{p}} & {\color[HTML]{111111} \textbf{q}} & {\color[HTML]{111111} \textbf{AIC}} & {\color[HTML]{111111} \textbf{BIC}} & {\color[HTML]{111111} \textbf{HQIC}} \\ \hline
+		\rowcolor[HTML]{FFFFFF} 
+		{\color[HTML]{111111} 1}          & {\color[HTML]{111111} 1}          & {\color[HTML]{111111} 10945.997929} & {\color[HTML]{111111} 10969.572218} & {\color[HTML]{111111} 10954.526320}  \\ \hline
+		\rowcolor[HTML]{FFFFFF} 
+		{\color[HTML]{111111} 3}          & {\color[HTML]{111111} 0}          & {\color[HTML]{111111} 10940.398608} & {\color[HTML]{111111} 10969.866469} & {\color[HTML]{111111} 10951.059096}  \\ \hline
+		\rowcolor[HTML]{FFFFFF} 
+		{\color[HTML]{111111} 1}          & {\color[HTML]{111111} 2}          & {\color[HTML]{111111} 10941.710972} & {\color[HTML]{111111} 10971.178832} & {\color[HTML]{111111} 10952.371459}  \\ \hline
+		\rowcolor[HTML]{FFFFFF} 
+		{\color[HTML]{111111} 2}          & {\color[HTML]{111111} 1}          & {\color[HTML]{111111} 10944.132071} & {\color[HTML]{111111} 10973.599931} & {\color[HTML]{111111} 10954.792559}  \\ \hline
+		\rowcolor[HTML]{FFFFFF} 
+		{\color[HTML]{111111} 2}          & {\color[HTML]{111111} 2}          & {\color[HTML]{111111} 10938.737268} & {\color[HTML]{111111} 10974.098700} & {\color[HTML]{111111} 10951.529853}  \\ \hline
+	\end{tabular}
+\caption{Kryteria informacyjne wg BIC}
+\label{t2}
+\end{table}
 
-\subsection{Estymacja parametrów modelu}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|r|r|r|r|r|}
+		\hline
+		\rowcolor[HTML]{C0C0C0} 
+		{\color[HTML]{111111} \textbf{p}} & {\color[HTML]{111111} \textbf{q}} & {\color[HTML]{111111} \textbf{AIC}} & {\color[HTML]{111111} \textbf{BIC}} & {\color[HTML]{111111} \textbf{HQIC}} \\ \hline
+		{\color[HTML]{111111} 3}          & {\color[HTML]{111111} 0}          & {\color[HTML]{111111} 10940.398608} & {\color[HTML]{111111} 10969.866469} & {\color[HTML]{111111} 10951.059096}  \\ \hline
+		{\color[HTML]{111111} 2}          & {\color[HTML]{111111} 2}          & {\color[HTML]{111111} 10938.737268} & {\color[HTML]{111111} 10974.098700} & {\color[HTML]{111111} 10951.529853}  \\ \hline
+		{\color[HTML]{111111} 3}          & {\color[HTML]{111111} 1}          & {\color[HTML]{111111} 10938.935705} & {\color[HTML]{111111} 10974.297137} & {\color[HTML]{111111} 10951.728290}  \\ \hline
+		{\color[HTML]{111111} 1}          & {\color[HTML]{111111} 2}          & {\color[HTML]{111111} 10941.710972} & {\color[HTML]{111111} 10971.178832} & {\color[HTML]{111111} 10952.371459}  \\ \hline
+		{\color[HTML]{111111} 1}          & {\color[HTML]{111111} 3}          & {\color[HTML]{111111} 10940.538468} & {\color[HTML]{111111} 10975.899900} & {\color[HTML]{111111} 10953.331053}  \\ \hline
+	\end{tabular}
+\caption{Kryteria informacyjne wg HQIC}
+\label{t3}
+\end{table}
 
-Do estymacji parametrów wykorzystamy metodę największej wiarygodności zaimplementowaną w pythonowym pakiecie statsmodels. Metoda ta zakłada, że zmienne składające się na szum mają rozkład normalny. Wartości współczynników można zobaczyć w tabeli poniżej.
-
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l|}
+		\cline{2-7}
+		& \cellcolor[HTML]{C0C0C0}coef & \cellcolor[HTML]{C0C0C0}std err & \cellcolor[HTML]{C0C0C0}z & \cellcolor[HTML]{C0C0C0}P\textgreater{}|z| & \cellcolor[HTML]{C0C0C0}{[}0.025 & \cellcolor[HTML]{C0C0C0}0.975{]} \\ \hline
+		\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{111111} const}}  & 0.2230                       & 0.150                           & 1.486                     & 0.137                                      & -0.071                           & 0.517                            \\ \hline
+		\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{111111} ar.L1}}  & 0.7205                       & 0.017                           & 42.821                    & 0.000                                      & 0.687                            & 0.753                            \\ \hline
+		\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{111111} ma.L1}}  & 0.1546                       & 0.023                           & 6.580                     & 0.000                                      & 0.109                            & 0.201                            \\ \hline
+		\multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}{\color[HTML]{111111} sigma2}} & 3.4663                       & 0.096                           & 35.996                    & 0.000                                      & 3.278                            & 3.655                            \\ \hline
+	\end{tabular}
+\caption{Statystyki ARIMA}
+\label{t4}
+\end{table}
 \section{Ocena dopasowania modelu}
+
+
 
 \section{Weryfikacja założeń dotyczących szumu}
 
-Szum ${Z_t}$ w modelu ARMA powinien spełniać poniższe założenia:
-\begin{enumerate}
-	\item Średnia ${Z_t}$ jest bliska 0
-	\item Wariancja ${Z_t}$ jest taka sama dla każdego $t$
-	\item ${Z_t}$ są niezależne
-	\item ${Z_t}$ mają rozkład normalny
-\end{enumerate}
-
-\subsection{Średnia}
-Na podstawie wykresu możemy stwierdzić, że średnia prawdopodobnie jest równa 0. Dodatkowo możemy to sprawdzić przy pomocy testu t. Test ten sprawdza hipotezę zerową "Średnia z próby jest równa $\mu$" przeciwko hipotezie alternatywnej "Średnia z próby jest różna od $\mu$". Jak widać poniżej, wynik testu potwierdza wnioski wyciągnięte z wykresu — nie ma podstaw do odrzucenia zerowej.
-
-\subsection{Wariancja}
-Na wykresie nie widać znaczących zmian w wariancji zależnych od czasu, jednak dla pewności wykonamy test 
-
-\subsection{Niezależność}
-
-\subsection{Normalność rozkładu}
 
 
 
