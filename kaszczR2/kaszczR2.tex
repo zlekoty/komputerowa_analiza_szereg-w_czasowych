@@ -212,12 +212,22 @@ Musimy teraz dobrać rząd modelu ARMA(p,q). Do wykonania tego posłużą nam kr
 \caption{Statystyki ARIMA}
 \label{t4}
 \end{table}
+
 \section{Ocena dopasowania modelu}
 
 
 
 \section{Weryfikacja założeń dotyczących szumu}
-
+	\begin{lstlisting}[language=Python, caption=Test D'Agostino-Pearsona, label={norm}]
+	stat, p_value = scipy.stats.levene(random.sample(model.resid,500),random.sample(model.resid,500))
+	if p_value > 0.05:
+	print("Wariancja jest raczej stala.")
+	else:
+	print("Wariancja raczej nie jest stala.")
+	
+	#output
+	Wariancja jest raczej stala.
+\end{lstlisting}
 
 
 
