@@ -143,13 +143,50 @@ Aby dokończyć proces dekompozycji, wystarczy od naszych danych odjąć wartoś
 	\end{center}
 \end{figure}
 
+\section{Modelowanie danych przy pomocy ARMA}
+
+\subsection{Dobranie rzędu modelu}
+
+W celu dobrania rzędu modelu, wyliczyłyśmy wartości kilku kryteriów informacyjnych
+\begin{itemize}
+	\item Kryterium Informacyjne Akaikego (AIC),
+	\item Bayesowskie Kryterium Informacyjne (BIC),
+	\item Kryterium Informacyjne Hannana-Quinna (HQIC)
+\end{itemize}
+dla wartości $p$ i $q$ z przedziału $[0, 9]$. Otrzymałyśmy wyniki jak w tabelach poniżej. Najlepiej dopasowane pary wg poszczególnych kryteriów to
+\begin{itemize}
+	\item $p=5$, $q=6$ dla AIC,
+	\item $p=1$, $q=1$ dla BIC,
+	\item $p=3$, $q=0$ dla HQIC.
+\end{itemize}
+Jako że nie da się określić modelu jednoznacznie najlepiej dopasowanego, 
+do dalszej analizy zdecydowałyśmy się przyjąć najmniej skomplikowany z powyższych modeli, czyli ARMA(1, 1).
+
+\subsection{Estymacja parametrów modelu}
+
+Do estymacji parametrów wykorzystamy metodę największej wiarygodności zaimplementowaną w pythonowym pakiecie statsmodels. Metoda ta zakłada, że zmienne składające się na szum mają rozkład normalny. Wartości współczynników można zobaczyć w tabeli poniżej.
+
 \section{Ocena dopasowania modelu}
-
-Musimy teraz dobrać rząd modelu ARMA(p,q). Do wykonania tego posłużą nam kryteria informacyjne.
-
 
 \section{Weryfikacja założeń dotyczących szumu}
 
+Szum ${Z_t}$ w modelu ARMA powinien spełniać poniższe założenia:
+\begin{enumerate}
+	\item Średnia ${Z_t}$ jest bliska 0
+	\item Wariancja ${Z_t}$ jest taka sama dla każdego $t$
+	\item ${Z_t}$ są niezależne
+	\item ${Z_t}$ mają rozkład normalny
+\end{enumerate}
+
+\subsection{Średnia}
+Na podstawie wykresu możemy stwierdzić, że średnia prawdopodobnie jest równa 0. Dodatkowo możemy to sprawdzić przy pomocy testu t. Test ten sprawdza hipotezę zerową "Średnia z próby jest równa $\mu$" przeciwko hipotezie alternatywnej "Średnia z próby jest różna od $\mu$". Jak widać poniżej, wynik testu potwierdza wnioski wyciągnięte z wykresu — nie ma podstaw do odrzucenia zerowej.
+
+\subsection{Wariancja}
+Na wykresie nie widać znaczących zmian w wariancji zależnych od czasu, jednak dla pewności wykonamy test 
+
+\subsection{Niezależność}
+
+\subsection{Normalność rozkładu}
 
 
 

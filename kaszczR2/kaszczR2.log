@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.26)  8 FEB 2023 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.4.19)  8 FEB 2023 19:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -756,14 +756,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 59
 
 (c:/texlive/2021/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./kaszczR2.aux
-
-LaTeX Warning: Label `fig:acf1' multiply defined.
-
-
-LaTeX Warning: Label `fig:pacf1' multiply defined.
-
-)
+) (./kaszczR2.aux)
 \openout1 = `kaszczR2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -784,7 +777,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
- (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count325
 \scratchdimen=\dimen289
@@ -1001,7 +995,7 @@ le pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./obrazki//plot2.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
 >]
-<obrazki//plot4.pdf, id=208, 722.7pt x 361.35pt>
+<obrazki//plot4.pdf, id=207, 722.7pt x 361.35pt>
 File: obrazki//plot4.pdf Graphic file (type pdf)
 <use obrazki//plot4.pdf>
 Package pdftex.def Info: obrazki//plot4.pdf  used on input line 123.
@@ -1012,7 +1006,7 @@ Overfull \hbox (25.29878pt too wide) in paragraph at lines 123--124
  []
 
 [4 <./obrazki//plot3.pdf>]
-<obrazki//acf2.pdf, id=255, 433.62pt x 289.08pt>
+<obrazki//acf2.pdf, id=254, 433.62pt x 289.08pt>
 File: obrazki//acf2.pdf Graphic file (type pdf)
 <use obrazki//acf2.pdf>
 Package pdftex.def Info: obrazki//acf2.pdf  used on input line 133.
@@ -1022,7 +1016,7 @@ Overfull \hbox (1.77104pt too wide) in paragraph at lines 133--134
  [][] 
  []
 
-<obrazki//pacf2.pdf, id=256, 433.62pt x 289.08pt>
+<obrazki//pacf2.pdf, id=255, 433.62pt x 289.08pt>
 File: obrazki//pacf2.pdf Graphic file (type pdf)
 <use obrazki//pacf2.pdf>
 Package pdftex.def Info: obrazki//pacf2.pdf  used on input line 139.
@@ -1032,7 +1026,11 @@ Overfull \hbox (1.77104pt too wide) in paragraph at lines 139--140
  [][] 
  []
 
-[5 <./obrazki//plot4.pdf> <./obrazki//acf2.pdf
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+52.
+(c:/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [5 <./obrazki//plot4.pdf> <./obrazki//acf2.pdf
 
 pdfTeX warning: pdflatex.exe (file ./obrazki//acf2.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
@@ -1040,53 +1038,52 @@ e pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./obrazki//pacf2.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-62.
- (c:/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (12.2442pt too wide) in paragraph at lines 163--164
+>] [6]
+Overfull \hbox (12.2442pt too wide) in paragraph at lines 200--201
 [][]$\T1/lmtt/m/n/10 https : / / www . kaggle . com / datasets / eliasturk / wo
 rld-[]happiness-[]based-[]on-[]cpi-[]20152020$[] 
  []
 
 
-Overfull \hbox (83.24399pt too wide) in paragraph at lines 165--166
+Overfull \hbox (83.24399pt too wide) in paragraph at lines 202--203
 [][]$\T1/lmtt/m/n/10 http : / / tofesi . mimuw . edu . pl / ~cogito / smarterpo
 land / samouczki / testyNormalnosci / testyNormalnosci .
  []
 
-[6] (./kaszczR2.aux)
+[7] (./kaszczR2.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+Package rerunfilecheck Warning: File `kaszczR2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: File `kaszczR2.out' has not changed.
-(rerunfilecheck)             Checksum: D00841DD51F3D45B1A25C101A4DF0D92;881.
+Package rerunfilecheck Info: Checksums for `kaszczR2.out':
+(rerunfilecheck)             Before: D00841DD51F3D45B1A25C101A4DF0D92;881
+(rerunfilecheck)             After:  F50D2A8CF9842D3DC99521E62C10C94C;1974.
  ) 
 Here is how much of TeX's memory you used:
- 17456 strings out of 478994
- 291585 string characters out of 5862207
- 692326 words of memory out of 5000000
- 34590 multiletter control sequences out of 15000+600000
- 450126 words of font info for 73 fonts, out of 8000000 for 9000
+ 17473 strings out of 478994
+ 291792 string characters out of 5862207
+ 695387 words of memory out of 5000000
+ 34595 multiletter control sequences out of 15000+600000
+ 456123 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  97i,9n,117p,605b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2021/te
-xmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvi
-ps/lm/lm-mathsy.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c
-:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2021/tex
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2021
+/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2021/texmf-dist/fonts/enc
+/dvips/lm/lm-ec.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.en
+c}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}<c:/texlive/2021/tex
 mf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type
 1/public/lm/lmbx12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi10
-.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/20
-21/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2021/texmf-dist/fonts
-/type1/public/lm/lmr17.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lm
-ri10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texli
-ve/2021/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on kaszczR2.pdf (6 pages, 327495 bytes).
+.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/texlive/20
+21/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2021/texmf-dist/fonts
+/type1/public/lm/lmr12.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lm
+r17.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texliv
+e/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2021/texmf-dist/
+fonts/type1/public/lm/lmtt10.pfb>
+Output written on kaszczR2.pdf (7 pages, 336448 bytes).
 PDF statistics:
- 404 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
+ 427 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
  89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
