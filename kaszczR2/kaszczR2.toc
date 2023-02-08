@@ -1,13 +1,6 @@
 \contentsline {section}{\numberline {1}Wstęp}{2}{section.1}%
 \contentsline {section}{\numberline {2}Przygotowanie danych do analizy}{2}{section.2}%
-\contentsline {section}{\numberline {3}Modelowanie danych przy pomocy ARMA}{2}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Dobranie rzędu modelu}{2}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Estymacja parametrów modelu}{2}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Ocena dopasowania modelu}{3}{section.4}%
-\contentsline {section}{\numberline {5}Weryfikacja założeń dotyczących szumu}{3}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Średnia}{3}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Wariancja}{3}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Niezależność}{3}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Normalność rozkładu}{3}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Podsumowanie}{3}{section.6}%
-\contentsline {section}{\numberline {7}Źródła}{3}{section.7}%
+\contentsline {section}{\numberline {3}Ocena dopasowania modelu}{5}{section.3}%
+\contentsline {section}{\numberline {4}Weryfikacja założeń dotyczących szumu}{6}{section.4}%
+\contentsline {section}{\numberline {5}Podsumowanie}{6}{section.5}%
+\contentsline {section}{\numberline {6}Źródła}{6}{section.6}%
