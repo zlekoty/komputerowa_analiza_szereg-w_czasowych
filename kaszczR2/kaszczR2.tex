@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[export]{adjustbox}
+\usepackage{mathtools,amsthm,amssymb,icomma,upgreek,xfrac,enumerate, bbm,titlesec,lmodern,polski,derivative,geometry,multicol,titling,graphicx,url,amsmath,caption,lipsum,float,longtable,booktabs}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[hidelinks,breaklinks,pdfusetitle,pdfdisplaydoctitle]{hyperref}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{light-gray}{gray}{0.95}
+\setlength{\droptitle}{-1cm}
+\mathtoolsset{showonlyrefs,mathic}
+\title{Analiza danych rzeczywistych przy pomocy modelu ARMA}
+\author{Natalia Klepacka, Joanna Kołaczek}
+\date{08.02.2023}
+\newtheoremstyle{break}
+{\topsep}{\topsep}%
+{\normalfont}{}%
+{\bfseries}{}%
+{\newline}{}%
+\theoremstyle{break}
+
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\paragraph}{\large\bfseries}
+\titleformat*{\subparagraph}{\large\bfseries}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\renewcommand{\lstlistingname}{Kod}% Listing -> Kod
+\renewcommand{\lstlistlistingname}{Lista Kodów}% List of Listings -> Lista kodów
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+\graphicspath{{obrazki/}}
+
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\clearpage
+	\section{Wstęp}
+	Niniejszy raport powstał na potrzeby realizacji laboratorium z Komputerowej Analizy Szeregów Czasowych, prowadzonych przez mgr Justynę Witulską, do wykładu prof. Agnieszki Wyłomańskiej.
+Będziemy analizować dane dotyczące poziomu szczęścia w wybranych krajach na świecie oraz jego związku z wartością PKB na osobę (w dalszej części raportu, będziemy je określać skrótowo jako szczęście i PKB). Po usunięciu wartości brakujących dysponujemy próbami o wielkości~791. Dane pochodzą \href{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}{\textit{z tej strony}}. Są to wyniki uzyskane przez Instytut Gallupa, w ankietach badających poziom szczęścia oraz jego możliwe indykatory, zebrane  w latach 2015-2020. W raporcie przeprowadzimy analizę jednowymiarową dla dwóch zmiennych oraz zwizualizujemy je przy pomocy histogramu, dystrybuanty empirycznej oraz boxplotu. Następnie wyestymujemy współczynniki w klasycznym modelu regresji, aby ostatecznie sprawdzić, czy uzyskane residua spełniają oczekiwane założenia.
+
+Życzymy Czytelnikowi miłej lektury.
+
+\section{Przygotowanie danych do analizy}
+
+\section{Modelowanie danych przy pomocy ARMA}
+
+\section{Ocena dopasowania modelu}
+
+\section{Weryfikacja założeń dotyczących szumu}
+
+
+
+
+	\section{Podsumowanie}
+	
+	Na podstawie przeprowadzonej analizy możemy stwierdzić, że między poziomem szczęścia a PKB per capita dla danego kraju występuje dosyć silna zależność liniowa. Niestety badanie residuów wykazało, że nie mają one rozkładu normalnego. Oznacza to, że co prawda punktowe estymacje zostały przez nas wykonane poprawnie, jednak wszystkie estymacje przedziałowe oparte były o założenie o normalności rozkładu residuów, zatem nie mają zastosowania w tym modelu. Niestety nie znając rozkładu $\epsilon$, nie możemy wyznaczyć faktycznych przedziałów ufności.
+	
+	\section{Źródła}
+	\begin{itemize}
+		\item Wykłady
+		\item \url{https://www.kaggle.com/datasets/eliasturk/world-happiness-based-on-cpi-20152020}
+		\item \url{https://www.itl.nist.gov/div898/handbook/eda/section3/eda35a.html}
+		\item \url{http://tofesi.mimuw.edu.pl/~cogito/smarterpoland/samouczki/testyNormalnosci/testyNormalnosci.pdf} str.11
+		
+	\end{itemize}
+	
+	
+\end{document}
