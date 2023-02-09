@@ -68,7 +68,7 @@
 	Życzymy Czytelnikowi miłej lektury.
 	
 	\section{Przygotowanie danych do analizy}
-	W rozważanym przez nas fragmencie danych, nie było żadnych braków danych ani wartości odstających, zatem analizujemy je w niezmienionej formie. Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej temperatury w Londynie od czasu. Wyraźnie widoczna jest sezonowość, natomiast nie możemy być pewni co do obecności trendu. Wykresy autokorelacji [\ref{fig:acf1}] oraz częściowej autokorelacji [\ref{fig:pacf1}] potwierdzają, że nie możemy mówić tu o szeregu stacjonarnym.
+	W rozważanym przez nas fragmencie danych nie było żadnych braków danych ani wartości odstających, zatem analizujemy je w niezmienionej formie. Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej temperatury w Londynie od czasu. Wyraźnie widoczna jest sezonowość, natomiast nie możemy być pewni co do obecności trendu. Wykresy autokorelacji [\ref{fig:acf1}] oraz częściowej autokorelacji [\ref{fig:pacf1}] potwierdzają, że nie możemy mówić tu o szeregu stacjonarnym.
 	
 	\begin{figure}[H]
 		\begin{center}
@@ -154,7 +154,7 @@
 		\item Kryterium Informacyjne Hannana-Quinna (HQIC)
 	\end{itemize}
 	
-	dla wartości $p$ i $q$ z przedziału $[0,9]$. Otrzymałyśmy winiki widoczne w tabelach [\ref{t1}][\ref{t2}][\ref{t3}]. Najlepiej dopasowane pary wg poszczególnych kryteriów to
+	dla wartości $p$ i $q$ z przedziału $[0,9]$. Otrzymałyśmy wyniki widoczne w tabelach [\ref{t1}][\ref{t2}][\ref{t3}]. Najlepiej dopasowane pary wg poszczególnych kryteriów to
 	
 	\begin{itemize}
 		\item $p=5$, $q=6$ dla AIC,
@@ -220,7 +220,7 @@
 	Jako że nie da się określić modelu jednoznacznie najlepiej dopasowanego, do dalszej analizy zdecydowałyśmy się przyjąć najmniej skomplikowany model, czyli ARMA(1, 1).
 	
 	\subsection{Estymacja parametrów modelu}
-	Do estymacji parametrów wykorzystamy metodę największej wiarygodności zaimplementowaną w pythonowym pakiecie \code{statsmodels}. Metoda ta zakłada, że zmienne składające się na szum mają rozkład normalny. Wartości współczynników można zobaczyć w tabeli [\ref{t4}]
+	Do estymacji parametrów wykorzystamy metodę największej wiarygodności zaimplementowaną w pythonowym pakiecie \code{statsmodels}. Metoda ta zakłada, że zmienne składające się na szum mają rozkład normalny. Wartości współczynników można zobaczyć w tabeli [\ref{t4}].
 	
 	\begin{table}[H]
 		\centering
@@ -350,7 +350,7 @@
 	
 	\section{Podsumowanie}
 	
-	Na podstawie przeprowadzonej analizy możemy stwierdzić, że dane dotyczące średniej dziennej temperatury w Londynie, po przeprowadzeniu dekompozycji Walda, można opisać przy pomocy modelu ARMA. Dla modelu ARMA(1,1) residua spełniają wszystkie założenia co sugeruje, że jest on dobrze dopasowany. Otrzymane wyniki pozwalają predykować przyszłe wartości jednak należy pamiętać, że nasze przewidywania nigdy nie będą w stu procentach zgodne z rzeczywistością.
+	Na podstawie przeprowadzonej analizy możemy stwierdzić, że dane dotyczące średniej dziennej temperatury w Londynie, po przeprowadzeniu dekompozycji Walda, można opisać przy pomocy modelu ARMA. Dla modelu ARMA(1, 1) residua spełniają wszystkie założenia, co sugeruje, że jest on dobrze dopasowany. Otrzymane wyniki pozwalają predykować przyszłe wartości jednak należy pamiętać, że nasze przewidywania nigdy nie będą w stu procentach zgodne z rzeczywistością.
 	
 	\section{Źródła}
 	\begin{itemize}
