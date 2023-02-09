@@ -68,8 +68,7 @@
 	Życzymy Czytelnikowi miłej lektury.
 	
 	\section{Przygotowanie danych do analizy}
-	
-	Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej temperatury w Londynie od czasu. Wyraźnie widoczna jest sezonowość, natomiast nie możemy być pewni co do obecności trendu. Wykresy autokorelacji [\ref{fig:acf1}] oraz częściowej autokorelacji [\ref{fig:pacf1}] potwierdzają, że nie możemy mówić tu o szeregu stacjonarnym.
+	W rozważanym przez nas fragmencie danych, nie było żadnych braków danych ani wartości odstających, zatem analizujemy je w niezmienionej formie. Na wykresie [\ref{fig:p1}] przedstawiona jest zależność średniej dziennej temperatury w Londynie od czasu. Wyraźnie widoczna jest sezonowość, natomiast nie możemy być pewni co do obecności trendu. Wykresy autokorelacji [\ref{fig:acf1}] oraz częściowej autokorelacji [\ref{fig:pacf1}] potwierdzają, że nie możemy mówić tu o szeregu stacjonarnym.
 	
 	\begin{figure}[H]
 		\begin{center}
@@ -105,12 +104,14 @@
 			\label{fig:p2}
 		\end{center}
 	\end{figure}
+
+\newpage
 	
 	Kolejnym krokiem będzie próba usunięcia sezonowości. Na poprzednich wykresach mogliśmy zauważyć, że dane układają się w kształt funkcji sinusoidalnej. Załóżmy, że da się je opisać przy pomocy funkcji $f(x) = c\cdot\sin(d\cdot x+e)$. Używamy pakietu \code{scipy}, a konkretnie funkcji \code{optimize.curve\_fit}, aby dopasować odpowiednie współczynniki $c$, $d$, $e$. Efekt widzimy na wykresie \ref{fig:p3}.
 	
 	\begin{figure}[H]
 		\begin{center}
-			\includegraphics[scale=0.63]{plot3.pdf}
+			\includegraphics[scale=0.5]{plot3.pdf}
 			\caption{Krzywa sinusoidalna}
 			\label{fig:p3}
 		\end{center}
@@ -120,7 +121,7 @@
 	
 	\begin{figure}[H]
 		\begin{center}
-			\includegraphics[scale=0.63]{plot4.pdf}
+			\includegraphics[scale=0.5]{plot4.pdf}
 			\caption{Dane po dekompozycji}
 			\label{fig:p4}
 		\end{center}
@@ -275,7 +276,7 @@
 	\end{figure}
 	
 	\subsection{Średnia}
-	Na podstawie wykresu[\ref{fig:res}] możemy stwierdzić, że średnia prawdopodobnie jest równa 0. Dodatkowym sprawdzeniem może być wykonanie testu t. Test ten sprawdza hipotezę zerową "Średnia z próby jest równa $\mu$" przeciwko hipotezie alternatywnej "Średnia z próby jest różna od $\mu$". Jak widać poniżej[\ref{srednia}], wynik testu potwierdza wnioski wyciągnięte z wykresu — nie ma podstaw do odrzucenia hipotezy zerowej.
+	Na podstawie wykresu [\ref{fig:res}] możemy stwierdzić, że średnia prawdopodobnie jest równa 0. Dodatkowym sprawdzeniem może być wykonanie testu t. Test ten sprawdza hipotezę zerową "Średnia z próby jest równa $\mu$" przeciwko hipotezie alternatywnej "Średnia z próby jest różna od $\mu$". Jak widać poniżej [\ref{srednia}], wynik testu potwierdza wnioski wyciągnięte z wykresu — nie ma podstaw do odrzucenia hipotezy zerowej.
 	
 	\begin{lstlisting}[language=Python, caption=Test t, label={srednia}]
 		sp.stats.ttest_1samp(resid, popmean=0)
@@ -284,7 +285,7 @@
 		Ttest_1sampResult(statistic=0.04706184306961072, pvalue=0.9624674462497231)\end{lstlisting}
 	
 	\subsection{Wariancja}
-	Na wykresie[\ref{fig:res}] nie widać znaczących zmian w wariancji zależnych od czasu, jednak dla pewności wykonamy test Levene'a jednorodności wariancji. Test ten sprawdza hipotezę zerową "Wszystkie próbki pochodzą z populacji o tej samej wariancji" przeciwko hipotezie alternatywnej "Przynajmniej dwie próbki pochodzą z populacji o różnych wariancjach". W tym celu dzieli próbkę na mniejsze podgrupy i porównuje ze sobą ich mediany.
+	Na wykresie [\ref{fig:res}] nie widać znaczących zmian w wariancji zależnych od czasu, jednak dla pewności wykonamy test Levene'a jednorodności wariancji. Test ten sprawdza hipotezę zerową "Wszystkie próbki pochodzą z populacji o tej samej wariancji" przeciwko hipotezie alternatywnej "Przynajmniej dwie próbki pochodzą z populacji o różnych wariancjach". W tym celu dzieli próbkę na mniejsze podgrupy i porównuje ze sobą ich mediany.
 	
 	\begin{lstlisting}[language=Python, caption=Test Levene'a, label={var}]
 		stat, p_value = scipy.stats.levene(random.sample(model.resid,500),random.sample(model.resid,500))
@@ -296,10 +297,10 @@
 		#output
 		Wariancja jest raczej stala.\end{lstlisting}
 	
-	Zgodnie z wynikiem testu[\ref{var}] nie ma podstaw do odrzucenia hipotezy zerowej, zatem możemy przyjąć, że wariancja residuów prawdopodobnie jest stała.
+	Zgodnie z wynikiem testu [\ref{var}] nie ma podstaw do odrzucenia hipotezy zerowej, zatem możemy przyjąć, że wariancja residuów prawdopodobnie jest stała.
 	
 	\subsection{Niezależność}
-	Z wykresów funkcji autokorelacji[\ref{fig:acf_res}] i częściowej autokorelacji[\ref{fig:pacf_res}] można łatwo wywnioskować, że residua są realizacjami niezależnych zmiennych losowych.
+	Z wykresów funkcji autokorelacji [\ref{fig:acf_res}] i częściowej autokorelacji [\ref{fig:pacf_res}] można łatwo wywnioskować, że residua są realizacjami niezależnych zmiennych losowych.
 	
 	\begin{figure}[H]
 		\begin{center}
@@ -318,26 +319,30 @@
 		\end{center}
 	\end{figure}
 	
-	Dystrybuanta rozkładu residuów niemal idealnie pokrywa się z dystrybuantą rozkładu normalnego[\ref{fig:res_dist}]. Podobnie histogram wartości[\ref{fig:res_pdf}] dobrze przybliża teoretyczną gęstość. Wykres kwantylowy[\ref{fig:res_qq}] pokrywa się odrobinę gorzej, ale nadal wystarczająco dobrze, żebyśmy mogli uznać, że dane pochodzą z rozkładu normalnego.
+	Dystrybuanta rozkładu residuów niemal idealnie pokrywa się z dystrybuantą rozkładu normalnego [\ref{fig:res_dist}]. Podobnie histogram wartości [\ref{fig:res_pdf}] dobrze przybliża teoretyczną gęstość. Wykres kwantylowy [\ref{fig:res_qq}] pokrywa się odrobinę gorzej, ale nadal wystarczająco dobrze, żebyśmy mogli uznać, że dane pochodzą z rozkładu normalnego.
+	
 	\begin{figure}[H]
 		\begin{center}
-			\includegraphics[scale=0.63]{res_dist.png}
-			\caption{Dystrybuanta residuów}
-			\label{fig:res_dist}
-		\end{center}
-	\end{figure} 
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=0.63]{res_pdf.png}
-			\caption{Gęstość residuów}
-			\label{fig:res_pdf}
+			\begin{minipage}{0.49\linewidth}
+				\centering
+				\includegraphics[scale=0.5]{res_dist.png}
+				\caption{Dystrybuanta residuów}
+				\label{fig:res_dist}
+			\end{minipage}
+			\begin{minipage}{0.49\linewidth}
+				\centering
+				\includegraphics[scale=0.5]{res_pdf.png}
+				\caption{Gęstość residuów}
+				\label{fig:res_pdf}
+			\end{minipage}
 		\end{center}
 	\end{figure}
+	
 
 
 	\begin{figure}[H]
 		\begin{center}
-			\includegraphics[scale=0.63]{res_qq.png}
+			\includegraphics[scale=0.55]{res_qq.png}
 			\caption{Wykres kwantylowy}
 			\label{fig:res_qq}
 		\end{center}
@@ -345,12 +350,13 @@
 	
 	\section{Podsumowanie}
 	
-	Na podstawie przeprowadzonej analizy możemy stwierdzić, że między poziomem szczęścia a PKB per capita dla danego kraju występuje dosyć silna zależność liniowa. Niestety badanie residuów wykazało, że nie mają one rozkładu normalnego. Oznacza to, że co prawda punktowe estymacje zostały przez nas wykonane poprawnie, jednak wszystkie estymacje przedziałowe oparte były o założenie o normalności rozkładu residuów, zatem nie mają zastosowania w tym modelu. Niestety nie znając rozkładu $\epsilon$, nie możemy wyznaczyć faktycznych przedziałów ufności.
+	Na podstawie przeprowadzonej analizy możemy stwierdzić, że dane dotyczące średniej dziennej temperatury w Londynie, po przeprowadzeniu dekompozycji Walda, można opisać przy pomocy modelu ARMA. Dla modelu ARMA(1,1) residua spełniają wszystkie założenia co sugeruje, że jest on dobrze dopasowany. Otrzymane wyniki pozwalają predykować przyszłe wartości jednak należy pamiętać, że nasze przewidywania nigdy nie będą w stu procentach zgodne z rzeczywistością.
 	
 	\section{Źródła}
 	\begin{itemize}
 		\item Wykłady
 		\item Dokumentacja pakietów \code{statsmodels} i \code{scipy}
+		\item \url{}
 		\item \url{https://www.kaggle.com/datasets/emmanuelfwerr/london-weather-data}
 		\item \url{https://en.wikipedia.org/wiki/Student%27s_t-test}
 		\item \url{https://en.wikipedia.org/wiki/Levene%27s_test}
